@@ -19,26 +19,37 @@
     <!-- create container-->
     <div class="flexContainer">
         <div>
+            <button class="videoHelperBtn" onclick="personalInfoHelper()">
+                Play Audio
+            </button>
             Please Enter Your Personal Information!
         </div>
         <div>
-            <!-- place play audio button here -->
-            Full name: 
+            <button class="videoHelperBtn" onclick="nameHelper()">
+                Play Audio
+            </button>
+            Full name:
             <input type="text" id="fullName" name="name">
         </div>
         <div>
-            <!-- place play audio button here -->
-            Date Of Dies: 
+            <button class="videoHelperBtn" onclick="dateDiesHelper()">
+                Play Audio
+            </button>
+            Date Of Dies:
             <input type="date" id="birthDies" name="birthDies">
         </div>
         <div>
-            Date Of Birth: 
-            <!-- place play audio button here -->
+            <button class="videoHelperBtn" onclick="fateBirthHelper()">
+                Play Audio
+            </button>
+            Date Of Birth:
             <input type="date" id="birthDate" name="birthDate">
         </div>
         <div>
-            Address: 
-            <!-- place play audio button here -->
+            <button class="videoHelperBtn" onclick="addressHelper()">
+                Play Audio
+            </button>
+            Address:
             <input type="text" id="address" name="address">
         </div>
         <div>
@@ -59,7 +70,8 @@
         </div>
         <div>
             Submit your selection!: <br>
-            <button type="button" onclick="">
+            <button type="button" onclick="saveInfoJSON()">
+                Submit
             </button>
         </div>
     </div>
