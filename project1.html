@@ -1,3 +1,14 @@
+<!-- 
+    The purpose of this file is to make a natural burial page
+    for disability client.
+    Autho(Group): 
+        Abhi
+        Madhur
+        Mariam
+        Prekha
+        Ziyang
+-->
+
 <!DOCTYPE html>
 
 <html>
@@ -10,67 +21,179 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- as powerpoint mentioned, no need css for project 1 -->
     <link rel="stylesheet" href="">
-
+    <!-- as powerpoint mentioned, no need js for project 1 -->
     <script src=""></script>
 </head>
 
 <body>
-    <!-- create container-->
+    <!-- Start FlexBox: Big Text(at least 24, maybe 48?)
+         bright background/dark text, no red no green -->
     <div class="flexContainer">
+        <!-- First input, for name -->
         <div>
+            <!-- helperbutton class, big font big shape,
+                on click:
+                    let personalInfoAudio = new Audio('personalInfo.mp3');
+                    personalInfoAudio.play(); -->
             <button class="videoHelperBtn" onclick="personalInfoHelper()">
                 Play Audio
             </button>
             Please Enter Your Personal Information!
         </div>
         <div>
+            <!-- helperbutton class as above,
+                on click, play name.mp3 -->
             <button class="videoHelperBtn" onclick="nameHelper()">
                 Play Audio
             </button>
+            <!-- input field for name -->
             Full name:
             <input type="text" id="fullName" name="name">
         </div>
         <div>
-            <button class="videoHelperBtn" onclick="dateDiesHelper()">
+            <!-- helperbutton class as above,
+                on click, play dob.mp3 -->
+            <button class="videoHelperBtn" onclick="dateBirthHelper()">
                 Play Audio
             </button>
-            Date Of Dies:
-            <input type="date" id="birthDies" name="birthDies">
-        </div>
-        <div>
-            <button class="videoHelperBtn" onclick="fateBirthHelper()">
-                Play Audio
-            </button>
+            <!-- input field for dob -->
             Date Of Birth:
             <input type="date" id="birthDate" name="birthDate">
         </div>
         <div>
-            <button class="videoHelperBtn" onclick="addressHelper()">
+            <!-- helperbutton class as above,
+                on click, play dod.mp3 -->
+            <button class="videoHelperBtn" onclick="dateDiesHelper()">
                 Play Audio
             </button>
+            <!-- input field for dod -->
+            Date Of Dies:
+            <input type="date" id="birthDies" name="birthDies">
+        </div>
+        <div>
+            <!-- helperbutton class as above,
+                on click, play contact.mp3 -->
+            <button class="videoHelperBtn" onclick="contactHelper()">
+                Play Audio
+            </button>
+            Contacnt Information: <br>
+            <!-- input field for contact-phone -->
+            Phone:
+            <input type="text" id="contactPhone" name="contactPhone"> <br>
+            <!-- input field for contact-address -->
             Address:
-            <input type="text" id="address" name="address">
+            <input type="text" id="contactAddress" name="contactAddress">
         </div>
         <div>
-            Realtions: 
-            <!-- place play audio button here -->
-            <input type="text" id="realtion" name="realtions">
+            <!-- helperbutton class as above,
+                on click, play realtion.mp3 -->
+            <button class="videoHelperBtn" onclick="realtionHelper()">
+                Play Audio
+            </button>
+            <!-- select bar for realtion -->
+            Realtions:
+            <select name="relation">
+                <option value="family">Family</option>
+                <option value="friends">Friends</option>
+                <option value="others">Others </option>
+            </select>
         </div>
         <div>
+            <!-- helperbutton class as above,
+                on click, play preference.mp3 -->
+            <button class="videoHelperBtn" onclick="preferenceHelper()">
+                Play Audio
+            </button>
+            <!-- select bar for burial perference -->
+            Burial Preference:
+            <select name="relation">
+                <option value="plotsite">Plotsite</option>
+                <option value="marker">Marker</option>
+            </select>
+        </div>
+        <div>
+            <!-- helperbutton class as above,
+                on click, play marker.mp3 -->
+            <button class="videoHelperBtn" onclick="markerHelper()">
+                Play Audio
+            </button>
+            <!-- select bar for marker option -->
             Please select marker option for the burial<br>
-            <!-- place play audio button for all options -->
             <select name="marker">
-  <option value="GPS">GPS</option>
-  <option value="tree">plant a tree</option>
-  <option value="plagues">flat wooden </option>
-  <option value="rock">name written on rock</option>
- 
-</select>
+                <option value="GPS">GPS</option>
+                <option value="tree">plant a tree</option>
+                <option value="plagues">flat wooden </option>
+                <option value="rock">name written on rock</option>
+            </select>
         </div>
         <div>
-            Submit your selection!: <br>
-            <button type="button" onclick="saveInfoJSON()">
+            <!-- helperbutton class as above,
+                on click, play personalmsg.mp3 -->
+            <button class="videoHelperBtn" onclick="personalMsgHelper()">
+                Play Audio
+            </button>
+            <!-- input field for personal msg -->
+            Personal Message:
+            <input type="text" id="message" name="message">
+        </div>
+        <div>
+            <!-- helperbutton class as above,
+                on click, play insurance.mp3 -->
+            <button class="videoHelperBtn" onclick="insuranceHelper()">
+                Play Audio
+            </button>
+            <!-- check box for insurance -->
+            Insurance Information: <br>
+            <label>
+                <input type="checkbox" name="insureYes" value="insureYes" 
+                class="single-checkbox"> Yes, have insurance
+            </label> <br>
+            <label>
+                <input type="checkbox" name="insureNo" value="insureYes" 
+                class="single-checkbox"> No, dont have insurance
+            </label> <br>
+        </div>
+        <div>
+            <!-- helperbutton class as above,
+                on click, play condition.mp3 -->
+            <button class="videoHelperBtn" onclick="conditionHelper()">
+                Play Audio
+            </button>
+            <!-- hyperlink jump button, 
+                on click, window.open( //condition page) -->
+            VIEW TERM AND CONDITIONS: <br>
+            <button class="hyperlinkJumpBtn" onclick="jumpToCoditionPage()">
+                Open Term and Conditions
+            </button>
+        </div>
+        <div>
+            <!-- helperbutton class as above,
+                on click, play initial.mp3 -->
+            <button class="videoHelperBtn" onclick="initialHelper()">
+                Play Audio
+            </button> 
+            Agreenent:<br>
+            <!-- input field for initials -->
+            Initials:
+            <input type="text" id="initials" name="initials"> <br>
+            <!-- input field for dos -->
+            Date Of Sign:
+            <input type="date" id="signDate" name="signDate">
+        </div>
+        <div>
+            <!-- helperbutton class as above,
+                on click, play submit.mp3 -->
+            <button class="videoHelperBtn" onclick="submitHelper()">
+                Play Audio
+            </button>
+            <!-- submit button big big button big text
+                on click:
+                    let infoJSON = ... (read all fields)
+                    stringify infoJSON, sent to server -->
+            Submit your selection!:
+            <button class="submitBtn" onclick="sendInfoJSON()">
                 Submit
             </button>
         </div>
