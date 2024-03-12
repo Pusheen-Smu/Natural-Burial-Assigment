@@ -74,7 +74,7 @@
             </button>
             <!-- input field for name -->
             Full name:
-            <input type="text" id="fullName" name="name">
+            <input type="text" id="fullName" name="name" required>
         </div><br>
         <div>
             <!-- helperbutton class as above,
@@ -84,7 +84,7 @@
             </button>
             <!-- input field for dob -->
             Date Of Birth:
-            <input type="date" id="birthDate" name="birthDate">
+            <input type="date" id="birthDate" name="birthDate" required>
         </div><br>
         <div>
             <!-- helperbutton class as above,
@@ -94,7 +94,7 @@
             </button>
             <!-- input field for dod -->
             Date Of Death:
-            <input type="date" id="birthDies" name="birthDies">
+            <input type="date" id="birthDies" name="birthDies" required>
         </div><br>
         <div>
             <!-- helperbutton class as above,
@@ -103,7 +103,15 @@
                 Play Audio
             </button>
             Phone:
-            <input type="text" id="contactPhone" name="contactPhone"> <br><br>
+            <input type="tel" id="contactPhone" name="contactPhone" required> <br><br>
+              <!-- helperbutton class as above,
+                on click, play phone.mp3 -->
+            <button class="videoHelperBtn" onclick="emailHelper()">
+                Play Audio
+            </button>
+                         <!-- input field for contact-email -->
+            Email:
+            <input type="email" id="contactEmail" name="contactEmail"> <br>
             <!-- helperbutton class as above,
                 on click, play address.mp3 -->
             <button class="videoHelperBtn" onclick="addressHelper()">
@@ -111,7 +119,7 @@
             </button>
             <!-- input field for contact-address -->
             Address:
-            <input type="text" id="contactAddress" name="contactAddress"><br><br>
+            <input type="text" id="contactAddress" name="contactAddress" required><br><br>
         </div>
         <div>
             <!-- helperbutton class as above,
@@ -169,7 +177,7 @@
             Do you have insurance: <br>
             <label>
                 <input type="checkbox" name="insureYes" value="insureYes" 
-                class="single-checkbox"> Yes, have insurance
+                class="single-checkbox" required> Yes, have insurance
             </label> <br>
             <label>
                 <input type="checkbox" name="insureNo" value="insureYes" 
@@ -197,10 +205,10 @@
             Agreenent:<br>
             <!-- input field for initials -->
             Initials:
-            <input type="text" id="initials" name="initials"> <br>
+            <input type="text" id="initials" name="initials" required> <br>
             <!-- input field for dos -->
             Date Of Sign:
-            <input type="date" id="signDate" name="signDate">
+            <input type="date" id="signDate" name="signDate" required>
         </div><br>
         <div>
             <!-- helperbutton class as above,
