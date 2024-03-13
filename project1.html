@@ -59,7 +59,7 @@
             </button>
             <!-- input field for name -->
             Full name:
-            <input type="text" id="fullName" name="name">
+            <input type="text" id="fullName" name="name" required>
         </div><br>
         <div>
             <!-- helperbutton class as above,
@@ -69,7 +69,7 @@
             </button>
             <!-- input field for dob -->
             Date Of Birth:
-            <input type="date" id="birthDate" name="birthDate">
+            <input type="date" id="birthDate" name="birthDate" required>
         </div><br>
         <div>
             <!-- helperbutton class as above,
@@ -79,7 +79,7 @@
             </button>
             <!-- input field for dod -->
             Date Of Death:
-            <input type="date" id="birthDies" name="birthDies">
+            <input type="date" id="birthDies" name="birthDies" required>
         </div><br>
         <div>
             <!-- helperbutton class as above,
@@ -88,7 +88,7 @@
                 Play Audio
             </button>
             Phone:
-            <input type="text" id="contactPhone" name="contactPhone"> <br><br>
+            <input type="tel" id="contactPhone" name="contactPhone" required> <br><br>
             <!-- helperbutton class as above,
                 on click, play address.mp3 -->
             <button id="addressHelper" class="videoHelperBtn" onclick="addressHelper()">
@@ -96,14 +96,14 @@
             </button>
             <!-- input field for contact-address -->
             Address:
-            <input type="text" id="contactAddress" name="contactAddress"><br><br>
+            <input type="text" id="contactAddress" name="contactAddress" required><br><br>
 
             <button id="burialAddressHelper" class="videoHelperBtn" onclick="burialAddressHelper()">
                 Play Audio
             </button>
             <!-- input field for contact-address -->
-            Burial Address:
-            <input type="text" id="burialAddress" name="burial Address"><br><br>
+            Burial Site:
+            <input type="text" id="burialAddress" name="burial Address" required><br><br>
         </div>
         <div>
             <!-- helperbutton class as above,
@@ -112,19 +112,19 @@
                 Play Audio
             </button>
             <!-- select bar for realtion -->
-            Realtion with deceased:
-            <label> <br>
-                <input type="checkbox" name="relationFamily" value="relationFamily" class="single-checkbox">
-                Family
-            </label> <br>
-            <label>
-                <input type="checkbox" name="relationFriends" value="relationFriends" class="single-checkbox">
-                Friends
-            </label> <br>
-            <label>
-                <input type="checkbox" name="relationOther" value="relationOther" class="single-checkbox">
-                Others
-            </label> <br>
+            Realtion with deceased:<br>
+           
+                <input type="radio" name="relationFamily" value="family" id="relationFamily">
+                <label for="relationFamily">Family</label><br>
+                
+            
+          
+                <input type="radio" name="relationFriends" value="relationFriends" id="relationFriends">
+                <label for="relationFamily">Friends</label><br>
+          
+           
+                <input type="checkbox" name="relationOther" value="relationOther" id="relationOthers">
+              <label for="relationOthers">Others</label><br>
         </div><br>
         <div>
             <div>
