@@ -3,5 +3,12 @@ body {
     font-size: 1.5em ;
 }
 
+.videoHelperBtn {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    font-size: 64px;
+}
+
 
 
