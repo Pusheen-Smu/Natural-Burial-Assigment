@@ -28,8 +28,8 @@
 </head>
 
 <body>
-     <h2>Natural Burial Form</h2>
-    
+    <h2>Natural Burial Form</h2>
+
     <!-- Start FlexBox: Big Text(at least 24, maybe 48?)
          bright background/dark text, no red no green -->
     <div class="flexContainer">
@@ -47,7 +47,7 @@
                     if darkMode == true, switch to light
                     if false, switch to dark
                     (achieve by tailwild)-->
-            <button class="videoHelperBtn" onclick="darkModeHelper()">
+            <button class="lightDarkSwitchBtn" onclick="lightDarkSwitch()">
                 Switch Between Light and Dark Mode
             </button> <br>
             <button class="videoHelperBtn" onclick="darkModeHelper()">
@@ -56,15 +56,15 @@
             <!-- font size button, big font big shape,
                 on click:
                     increase font size-->
-            <button class="videoHelperBtn" onclick="incraseFont()">
+            <button class="increaseFontSizeBtn" onclick="incraseFont()">
                 Increase Font Size
             </button>
             <!-- font size button, big font big shape,
                 on click:
                     decrease font size-->
-                    <button class="videoHelperBtn" onclick="decraseFont()">
-                        Decrease Font Size
-                    </button>
+            <button class="decreaseFontSizeBtn" onclick="decraseFont()">
+                Decrease Font Size
+            </button>
         </div><br>
         <div>
             <!-- helperbutton class as above,
@@ -104,12 +104,12 @@
             </button>
             Phone:
             <input type="tel" id="contactPhone" name="contactPhone" required> <br>
-              <!-- helperbutton class as above,
+            <!-- helperbutton class as above,
                 on click, play phone.mp3 -->
             <button class="videoHelperBtn" onclick="emailHelper()">
                 Play Audio
             </button>
-                         <!-- input field for contact-email -->
+            <!-- input field for contact-email -->
             Email:
             <input type="email" id="contactEmail" name="contactEmail"> <br>
             <!-- helperbutton class as above,
@@ -141,49 +141,49 @@
             <button class="videoHelperBtn" onclick="preferenceHelper()">
                 Play Audio
             </button>
-        
-        <div>
-            <!-- helperbutton class as above,
+
+            <div>
+                <!-- helperbutton class as above,
                 on click, play marker.mp3 -->
-            <button class="videoHelperBtn" onclick="markerHelper()">
-                Play Audio
-            </button>
-            <!-- select bar for marker option -->
-            Please select Marker options:
-            <select name="marker">
-                <option value="GPS">GPS</option>
-                <option value="tree">Plant a tree</option>
-                <option value="plagues">Flat wooden </option>
-                <option value="rock">Name written on rock</option>
-            </select>
-        </div><br>
-        <div>
-            <!-- helperbutton class as above,
+                <button class="videoHelperBtn" onclick="markerHelper()">
+                    Play Audio
+                </button>
+                <!-- select bar for marker option -->
+                Please select Marker options:
+                <select name="marker">
+                    <option value="GPS">GPS</option>
+                    <option value="tree">Plant a tree</option>
+                    <option value="plagues">Flat wooden </option>
+                    <option value="rock">Name written on rock</option>
+                </select>
+            </div><br>
+            <div>
+                <!-- helperbutton class as above,
                 on click, play personalmsg.mp3 -->
-            <button class="videoHelperBtn" onclick="personalMsgHelper()">
-                Play Audio
-            </button>
-            <!-- input field for personal msg -->
-            Personalized Preference/Message:
-            <input type="text" id="message" name="message">
-        </div><br>
-        <div>
-            <!-- helperbutton class as above,
+                <button class="videoHelperBtn" onclick="personalMsgHelper()">
+                    Play Audio
+                </button>
+                <!-- input field for personal msg -->
+                Personalized Preference/Message:
+                <input type="text" id="message" name="message">
+            </div><br>
+            <div>
+                <!-- helperbutton class as above,
                 on click, play insurance.mp3 -->
-            <button class="videoHelperBtn" onclick="insuranceHelper()">
-                Play Audio
-            </button>
-            <!-- check box for insurance -->
-            Do you have insurance: <br>
-            <label>
-                <input type="checkbox" name="insureYes" value="insureYes" 
-                class="single-checkbox" required> Yes, have insurance
-            </label> <br>
-            <label>
-                <input type="checkbox" name="insureNo" value="insureYes" 
-                class="single-checkbox"> No, dont have insurance
-            </label> <br>
-        </div><br>
+                <button class="videoHelperBtn" onclick="insuranceHelper()">
+                    Play Audio
+                </button>
+                <!-- check box for insurance -->
+                Do you have insurance: <br>
+                <label>
+                    <input type="checkbox" name="insureYes" value="insureYes" class="single-checkbox" required> Yes,
+                    have insurance
+                </label> <br>
+                <label>
+                    <input type="checkbox" name="insureNo" value="insureYes" class="single-checkbox"> No, dont have
+                    insurance
+                </label> <br>
+            </div><br>
             <div>
                 <!-- helperbutton class as above,
                 on click, play condition.mp3 -->
@@ -196,36 +196,36 @@
                     TERM AND CONDITIONS
                 </button>
             </div><br>
-        <div>
-            <!-- helperbutton class as above,
+            <div>
+                <!-- helperbutton class as above,
                 on click, play initial.mp3 -->
-            <button class="videoHelperBtn" onclick="initialHelper()">
-                Play Audio
-            </button> 
-            Agreenent:<br>
-            <!-- input field for initials -->
-            Initials:
-            <input type="text" id="initials" name="initials" required> <br>
-            <!-- input field for dos -->
-            Date Of Sign:
-            <input type="date" id="signDate" name="signDate" required>
-        </div><br>
-        <div>
-            <!-- helperbutton class as above,
+                <button class="videoHelperBtn" onclick="initialHelper()">
+                    Play Audio
+                </button>
+                Agreenent:<br>
+                <!-- input field for initials -->
+                Initials:
+                <input type="text" id="initials" name="initials" required> <br>
+                <!-- input field for dos -->
+                Date Of Sign:
+                <input type="date" id="signDate" name="signDate" required>
+            </div><br>
+            <div>
+                <!-- helperbutton class as above,
                 on click, play submit.mp3 -->
-            <button class="videoHelperBtn" onclick="submitHelper()">
-                Play Audio
-            </button>
-            <!-- submit button big big button big text
+                <button class="videoHelperBtn" onclick="submitHelper()">
+                    Play Audio
+                </button>
+                <!-- submit button big big button big text
                 on click:
                     let infoJSON = ... (read all fields)
                     stringify infoJSON, sent to server -->
-            Submit the form:
-            <button class="submitBtn" onclick="sendInfoJSON()">
-                Submit
-            </button>
-        </div><br>
-    </div>
+                Submit the form:
+                <button class="submitBtn" onclick="sendInfoJSON()">
+                    Submit
+                </button>
+            </div><br>
+        </div>
 </body>
 
 </html>
