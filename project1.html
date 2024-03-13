@@ -32,14 +32,14 @@
 
     <!-- Start FlexBox: Big Text(at least 24, maybe 48?)
          bright background/dark text, no red no green -->
-    <div class="flexContainer">
+    <div id="mainPage" class="flexContainer">
         <!-- First input, for name -->
         <div>
             <!-- helperbutton class, big font big shape,
                 on click:
                     let darkMode = new Audio('darkMode.mp3');
                     darkMode.play(); -->
-            <button class="videoHelperBtn" onclick="darkModeHelper()">
+            <button id="darkModeHelper" class="videoHelperBtn" onclick="darkModeHelper()">
                 Play Audio
             </button>
             <!-- switch mode button, big font big shape,
@@ -47,101 +47,86 @@
                     if darkMode == true, switch to light
                     if false, switch to dark
                     (achieve by tailwild)-->
-            <button class="lightDarkSwitchBtn" onclick="lightDarkSwitch()">
+            <button id="darkModeSwitch" class="videoHelperBtn" onclick="darkModeSwitch()">
                 Switch Between Light and Dark Mode
             </button> <br>
-            <button class="videoHelperBtn" onclick="darkModeHelper()">
-                Play Audio
-            </button>
-            <!-- font size button, big font big shape,
-                on click:
-                    increase font size-->
-            <button class="increaseFontSizeBtn" onclick="incraseFont()">
-                Increase Font Size
-            </button>
-            <!-- font size button, big font big shape,
-                on click:
-                    decrease font size-->
-            <button class="decreaseFontSizeBtn" onclick="decraseFont()">
-                Decrease Font Size
-            </button>
         </div><br>
         <div>
             <!-- helperbutton class as above,
                 on click, play name.mp3 -->
-            <button class="videoHelperBtn" onclick="nameHelper()">
+            <button id="nameHelper" class="videoHelperBtn" onclick="nameHelper()">
                 Play Audio
             </button>
             <!-- input field for name -->
             Full name:
-            <input type="text" id="fullName" name="name" required>
+            <input type="text" id="fullName" name="name">
         </div><br>
         <div>
             <!-- helperbutton class as above,
                 on click, play dob.mp3 -->
-            <button class="videoHelperBtn" onclick="dateBirthHelper()">
+            <button id="dateBirthHelper" class="videoHelperBtn" onclick="dateBirthHelper()">
                 Play Audio
             </button>
             <!-- input field for dob -->
             Date Of Birth:
-            <input type="date" id="birthDate" name="birthDate" required>
+            <input type="date" id="birthDate" name="birthDate">
         </div><br>
         <div>
             <!-- helperbutton class as above,
                 on click, play dod.mp3 -->
-            <button class="videoHelperBtn" onclick="dateDiesHelper()">
+            <button id="dateDiesHelper" class="videoHelperBtn" onclick="dateDiesHelper()">
                 Play Audio
             </button>
             <!-- input field for dod -->
             Date Of Death:
-            <input type="date" id="birthDies" name="birthDies" required>
+            <input type="date" id="birthDies" name="birthDies">
         </div><br>
         <div>
             <!-- helperbutton class as above,
                 on click, play phone.mp3 -->
-            <button class="videoHelperBtn" onclick="phoneHelper()">
+            <button id="phoneHelper" class="videoHelperBtn" onclick="phoneHelper()">
                 Play Audio
             </button>
             Phone:
-            <input type="tel" id="contactPhone" name="contactPhone" required> <br>
-            <!-- helperbutton class as above,
-                on click, play phone.mp3 -->
-            <button class="videoHelperBtn" onclick="emailHelper()">
-                Play Audio
-            </button>
-            <!-- input field for contact-email -->
-            Email:
-            <input type="email" id="contactEmail" name="contactEmail"> <br>
+            <input type="text" id="contactPhone" name="contactPhone"> <br><br>
             <!-- helperbutton class as above,
                 on click, play address.mp3 -->
-            <button class="videoHelperBtn" onclick="addressHelper()">
+            <button id="addressHelper" class="videoHelperBtn" onclick="addressHelper()">
                 Play Audio
             </button>
             <!-- input field for contact-address -->
             Address:
-            <input type="text" id="contactAddress" name="contactAddress" required><br><br>
+            <input type="text" id="contactAddress" name="contactAddress"><br><br>
+
+            <button id="burialAddressHelper" class="videoHelperBtn" onclick="burialAddressHelper()">
+                Play Audio
+            </button>
+            <!-- input field for contact-address -->
+            Burial Address:
+            <input type="text" id="burialAddress" name="burial Address"><br><br>
         </div>
         <div>
             <!-- helperbutton class as above,
                 on click, play realtion.mp3 -->
-            <button class="videoHelperBtn" onclick="realtionHelper()">
+            <button id="realtionHelper" class="videoHelperBtn" onclick="realtionHelper()">
                 Play Audio
             </button>
             <!-- select bar for realtion -->
             Realtion with deceased:
-            <select name="relation">
-                <option value="family">Family</option>
-                <option value="friends">Friends</option>
-                <option value="others">Others </option>
-            </select>
+            <label> <br>
+                <input type="checkbox" name="relationFamily" value="relationFamily" class="single-checkbox">
+                Family
+            </label> <br>
+            <label>
+                <input type="checkbox" name="relationFriends" value="relationFriends" class="single-checkbox">
+                Friends
+            </label> <br>
+            <label>
+                <input type="checkbox" name="relationOther" value="relationOther" class="single-checkbox">
+                Others
+            </label> <br>
         </div><br>
         <div>
-            <!-- helperbutton class as above,
-                on click, play preference.mp3 -->
-            <button class="videoHelperBtn" onclick="preferenceHelper()">
-                Play Audio
-            </button>
-
             <div>
                 <!-- helperbutton class as above,
                 on click, play marker.mp3 -->
@@ -150,17 +135,27 @@
                 </button>
                 <!-- select bar for marker option -->
                 Please select Marker options:
-                <select name="marker">
-                    <option value="GPS">GPS</option>
-                    <option value="tree">Plant a tree</option>
-                    <option value="plagues">Flat wooden </option>
-                    <option value="rock">Name written on rock</option>
-                </select>
+                <label> <br>
+                    <input type="checkbox" name="markerGPS" value="markerGPS" class="single-checkbox">
+                    GPS
+                </label> <br>
+                <label>
+                    <input type="checkbox" name="markerTree" value="markerTree" class="single-checkbox">
+                    Plant a Tree
+                </label> <br>
+                <label>
+                    <input type="checkbox" name="markerWooden" value="markerWooden" class="single-checkbox">
+                    FLat Wooden
+                </label> <br>
+                <label>
+                    <input type="checkbox" name="markerRock" value="markerRock" class="single-checkbox">
+                    Name written on rock
+                </label> <br>
             </div><br>
             <div>
                 <!-- helperbutton class as above,
                 on click, play personalmsg.mp3 -->
-                <button class="videoHelperBtn" onclick="personalMsgHelper()">
+                <button id="personalMsgHelper" class="videoHelperBtn" onclick="personalMsgHelper()">
                     Play Audio
                 </button>
                 <!-- input field for personal msg -->
@@ -170,14 +165,14 @@
             <div>
                 <!-- helperbutton class as above,
                 on click, play insurance.mp3 -->
-                <button class="videoHelperBtn" onclick="insuranceHelper()">
+                <button id="insuranceHelper" class="videoHelperBtn" onclick="insuranceHelper()">
                     Play Audio
                 </button>
                 <!-- check box for insurance -->
-                Do you have insurance: <br>
+                Do you have Insurance?: <br>
                 <label>
-                    <input type="checkbox" name="insureYes" value="insureYes" class="single-checkbox" required> Yes,
-                    have insurance
+                    <input type="checkbox" name="insureYes" value="insureYes" class="single-checkbox"> Yes, have
+                    insurance
                 </label> <br>
                 <label>
                     <input type="checkbox" name="insureNo" value="insureYes" class="single-checkbox"> No, dont have
@@ -187,41 +182,40 @@
             <div>
                 <!-- helperbutton class as above,
                 on click, play condition.mp3 -->
-                <button class="videoHelperBtn" onclick="conditionHelper()">
+                <button id="conditionHelper" class="videoHelperBtn" onclick="conditionHelper()">
                     Play Audio
                 </button>
                 <!-- hyperlink jump button, 
                 on click, window.open( //condition page) -->
-                <button class="hyperlinkJumpBtn" onclick="jumpToCoditionPage()">
+                <button id="hyperlinkJump" class="hyperlinkJumpBtn" onclick="jumpToCoditionPage()">
                     TERM AND CONDITIONS
                 </button>
             </div><br>
             <div>
                 <!-- helperbutton class as above,
                 on click, play initial.mp3 -->
-                <button class="videoHelperBtn" onclick="initialHelper()">
+                <button id="initialHelper" class="videoHelperBtn" onclick="initialHelper()">
                     Play Audio
                 </button>
-                Agreenent:<br>
                 <!-- input field for initials -->
                 Initials:
-                <input type="text" id="initials" name="initials" required> <br>
-                <!-- input field for dos -->
-                Date Of Sign:
-                <input type="date" id="signDate" name="signDate" required>
-            </div><br>
-            <div>
+                <input type="text" id="initials" name="initials"> <br>
                 <!-- helperbutton class as above,
-                on click, play submit.mp3 -->
-                <button class="videoHelperBtn" onclick="submitHelper()">
+                on click, play dateOfSign.mp3 -->
+                <button id="dateOfSignHelper" class="videoHelperBtn" onclick="dateOfSignHelper()">
                     Play Audio
                 </button>
+                <!-- input field for dos -->
+                Date Of Sign:
+                <input type="date" id="signDate" name="signDate">
+            </div><br>
+            <div>
                 <!-- submit button big big button big text
                 on click:
                     let infoJSON = ... (read all fields)
                     stringify infoJSON, sent to server -->
                 Submit the form:
-                <button class="submitBtn" onclick="sendInfoJSON()">
+                <button id = "submitBtn" class="submitBtn" onclick="sendInfoJSON()">
                     Submit
                 </button>
             </div><br>
