@@ -37,23 +37,11 @@
          bright background/dark text, no red no green -->
     <div id="mainPage" class="flexContainer">
         <!-- First input, for name -->
-        <div>
-            <!-- helperbutton class, big font big shape,
-                on click:
-                    let darkMode = new Audio('darkMode.mp3');
-                    darkMode.play(); -->
-            <button id="darkModeHelper" class="videoHelperBtn" onclick="darkModeHelper()">
-                <i class="bi bi-caret-right-square-fill"></i>
-            </button>
-            <!-- switch mode button, big font big shape,
-                on click:
-                    if darkMode == true, switch to light
-                    if false, switch to dark
-                    (achieve by tailwild)-->
-            <button id="darkModeSwitch" class="darkModeSwitchBtn" onclick="darkModeSwitch()">
-                Switch Between Light and Dark Mode
-            </button> <br>
-        </div><br>
+        <div id="toggleSwitch" class="switch" style="position: fixed; top: 10px; right: 10px; z-index: 9999;">
+        <label id="toggleLabel" class="switchLabel">Theme</label>
+        <input type="checkbox" id="toggleInput">
+        <span class="slider" id="slider"></span>
+    </div>
         <div>
             <!-- helperbutton class as above,
                 on click, play name.mp3 -->
