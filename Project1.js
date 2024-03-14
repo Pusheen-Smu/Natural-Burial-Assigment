@@ -66,6 +66,16 @@ function markerHelper() {
     markerHelperAudio.play();
 }
 
+function personalMsgHelper() {
+    let personalMsgHelperAudio = new Audio('personalMsgHelper.mp3');
+    personalMsgHelperAudio.play();
+}
+
+function initialHelper() {
+    let initialHelperAudio = new Audio('initialHelper.mp3');
+    initialHelperAudio.play();
+}
+
 
 
 
