@@ -4,12 +4,11 @@ body {
 }
 
 .videoHelperBtn {
-  width: 100px;
-  height: 50px;
+  
     padding: 0;
     border: none;
     background-color: transparent;
-    font-size: 64px;
+    font-size: 25px;
 }
 
 .switch {
