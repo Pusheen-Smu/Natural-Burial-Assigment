@@ -11,6 +11,10 @@ body {
     font-size: 25px;
 }
 
+.submitBtn {
+    font-size: 30px;
+}
+
 .switch {
     position: fixed;
     top: 10px;
