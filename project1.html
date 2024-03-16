@@ -36,14 +36,14 @@
     <!-- Start FlexBox: Big Text(at least 24, maybe 48?)
          bright background/dark text, no red no green -->
     <div id="mainPage" class="flexContainer">
-        <!-- First input, for name -->
+        <!-- Theme Bar. switch dark and light mode with event listener(will be add in js next project) -->
         <div id="toggleSwitch" class="switch" style="position: fixed; top: 10px; right: 10px; z-index: 9999;">
         <label id="toggleLabel" class="switchLabel">Dark Theme</label>
         <input type="checkbox" id="toggleInput">
         <span class="slider" id="slider"></span>
     </div>
         <div>
-            <!-- helperbutton class as above,
+            <!-- helperbutton, big icon big button, (plan to) change color if theme switch
                 on click, play name.mp3 -->
             <button id="nameHelper" class="videoHelperBtn" onclick="nameHelper()">
                 <i class="bi bi-caret-right-square-fill"></i>
@@ -58,7 +58,7 @@
             <button id="dateBirthHelper" class="videoHelperBtn" onclick="dateBirthHelper()">
                 <i class="bi bi-caret-right-square-fill"></i>
             </button>
-            <!-- input field for dob -->
+            <!-- input field for date of birth -->
             Date Of Birth:
             <input type="text" id="birthDate" name="birthDate"  placeholder="YYYY-MM-DD" required>
         </div><br>
@@ -68,7 +68,7 @@
             <button id="dateDiesHelper" class="videoHelperBtn" onclick="dateDiesHelper()">
                 <i class="bi bi-caret-right-square-fill"></i>
             </button>
-            <!-- input field for dod -->
+            <!-- input field for date of die  -->
             Date Of Death:
             <input type="text" id="birthDies" name="birthDies" placeholder="YYYY-MM-DD" required>
         </div><br>
