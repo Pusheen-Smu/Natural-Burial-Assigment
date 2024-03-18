@@ -1,100 +1,81 @@
-/*
-    The purpose of this file is to make a natural burial page
-    for disability client's style file.
-    Autho(Group): 
-        Abhi
-        Madhur
-        Mariam
-        Prekha 
-        Ziyang
-*/
+/* The purpose of this file is to provide styles includes font, buttons
+to  webpage 
+Autho(Group): 
+        Abhishek-(A00480219) (Group Leader)
+        Madhur-(A00477319)
+        Mariam-(A00460192)
+        Prekha-(A00469476)
+        Ziyang-(A00475502)
+        */
 
-
-/********** HTML tag styles **********/
+/* body font size */
 body {
-    font-family: Arial, sans-serif;
+    font-size: 1.5rem;
+    font-family: Calibri;
 }
 
-label {
-    display: inline;
-    margin-bottom: 15px;
-}
-
-input[type="text"],
-input[type="date"],
-select,
-textarea {
-
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-input:checked+.slider:before {
-    transform: translateX(26px);
-}
-
-/***** User defined class styles *****/
-
-.form-container {
-
-    max-width: 500px;
-    margin: auto;
-
-
-}
-
+/* For audio button style*/
 .videoHelperBtn {
-    margin-block-start: 5px;
-    padding: 1px;
+    padding: 0;
     border: none;
     background-color: transparent;
-    font-size: 25px;
+    font-size: 1.35rem;
 }
 
+/*for submit button style*/
+.submitBtn {
+    font-size: 1.5rem;
+}
+
+/*for toogle switch style*/
 .switch {
     position: fixed;
-    top: 10px;
-    right: 10px;
+    top: 1.2rem;
+    right: 1rem;
     z-index: 9999;
+    display: flex;
+    align-items: center;
 }
 
-.switch input {
-    display: none;
-}
-
+/*for toggle switch style*/
 .slider {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-    background-color: #ccc;
-    border-radius: 34px;
+    width: 3rem;
+    height: 2rem;
+    background-color: #000;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 0.5rem;
 }
 
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
+/*for toggle switch style*/
+.circle {
+    width: 1.6rem;
+    height: 1.5rem;
+    background-color: #fff;
     border-radius: 50%;
-    transition: transform 0.4s;
 }
 
-.slider {
-    background-color: #000000;
+/*styles for input field*/
+.inputField {
+    width: 25rem;
+    height: 1.8rem;
+    padding: 0%;
 }
 
-/******* User defined id styles ******/
-/** placeholder **/
-#darkMode {
-    
+/* to place content in centre of page*/
+.mainPage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    font-weight: normal;
 }
+
+
+
+
 
 
 
