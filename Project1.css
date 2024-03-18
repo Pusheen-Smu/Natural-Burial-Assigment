@@ -1,20 +1,38 @@
 body {
- 
-    font-size: 1.5em ;
+    font-family: Arial, sans-serif;
 }
 
+.form-container {
+
+    max-width: 500px;
+    margin: auto;
+
+
+}
+
+label {
+    display: inline;
+    margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="date"],
+select,
+textarea {
+
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
 .videoHelperBtn {
-  
-    padding: 0;
+    margin-block-start: 5px;
+    padding: 1px;
     border: none;
     background-color: transparent;
     font-size: 25px;
 }
-
-.submitBtn {
-    font-size: 30px;
-}
-
 .switch {
     position: fixed;
     top: 10px;
@@ -54,5 +72,8 @@ input:checked + .slider:before {
 .slider {
     background-color: #000000;
 }
+
+
+
 
 
