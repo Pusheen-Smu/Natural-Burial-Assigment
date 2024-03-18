@@ -1,13 +1,18 @@
+/*
+    The purpose of this file is to make a natural burial page
+    for disability client's style file.
+    Autho(Group): 
+        Abhi
+        Madhur
+        Mariam
+        Prekha 
+        Ziyang
+*/
+
+
+/********** HTML tag styles **********/
 body {
     font-family: Arial, sans-serif;
-}
-
-.form-container {
-
-    max-width: 500px;
-    margin: auto;
-
-
 }
 
 label {
@@ -26,6 +31,21 @@ textarea {
     border-radius: 5px;
     border: 1px solid #ccc;
 }
+
+input:checked+.slider:before {
+    transform: translateX(26px);
+}
+
+/***** User defined class styles *****/
+
+.form-container {
+
+    max-width: 500px;
+    margin: auto;
+
+
+}
+
 .videoHelperBtn {
     margin-block-start: 5px;
     padding: 1px;
@@ -33,6 +53,7 @@ textarea {
     background-color: transparent;
     font-size: 25px;
 }
+
 .switch {
     position: fixed;
     top: 10px;
@@ -65,12 +86,14 @@ textarea {
     transition: transform 0.4s;
 }
 
-input:checked + .slider:before {
-    transform: translateX(26px);
-}
-
 .slider {
     background-color: #000000;
+}
+
+/******* User defined id styles ******/
+/** placeholder **/
+#darkMode {
+    
 }
 
 
