@@ -3,7 +3,7 @@ let burialLocationAudio = new Audio('audioPackage/burial location.mp3');
 let burialMethodAudio = new Audio('audioPackage/burial method.mp3');
 let dateBirthAudio = new Audio('audioPackage/date of birth.mp3');
 let emailAudio = new Audio('audioPackage/email.mp3');
-let fullNameAudio = new Audio('audioPackage/fullName.mp3');
+let fullNameAudio = new Audio('audioPackage/fullname.mp3');
 let initialsAudio = new Audio('audioPackage/Initials.mp3');
 let markerOptionsAudio = new Audio('audioPackage/marker options.mp3');
 let naturalBurialCemeterieAudio = new Audio('audioPackage/natural burial cemeterie.mp3');
@@ -31,7 +31,7 @@ function email() {
     emailAudio.play();
 }
 
-function fullName() {
+function fullname() {
     fullNameAudio.play();
 }
 
