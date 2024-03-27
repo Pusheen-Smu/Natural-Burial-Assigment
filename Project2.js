@@ -16,6 +16,7 @@ function getInfo() {
         fullName: document.getElementById("fullName").value,
         birthDate: document.getElementById("birthDate").value,
         contactPhone: document.getElementById("contactPhone").value,
+        contactPhone: document.getElementById("emailAddress").value,
         contactAddress: document.getElementById("contactAddress").value,
         burialAddress: document.getElementById("burialAddress").value,
         relationDeceased: document.querySelector('input[name="relationDeceased"]:checked').id,
@@ -60,10 +61,11 @@ function populateFormFields() {
         document.getElementById("fullName").value = storedFormData.fullName;
         document.getElementById("birthDate").value = storedFormData.birthDate;
         document.getElementById("contactPhone").value = storedFormData.contactPhone;
+        document.getElementById("emailAddress").value = storedFormData.emailAddress;
         document.getElementById("contactAddress").value = storedFormData.contactAddress;
         document.getElementById("burialAddress").value = storedFormData.burialAddress;
         document.getElementById("message").value = storedFormData.message;
-        document.getElementById("burialAddress").value = storedFormData.initials;
+        document.getElementById("initials").value = storedFormData.initials;
         // Check the radio buttons based on stored data
         document.getElementById(storedFormData.relationDeceased).checked = true;
        document.getElementById(storedFormData.burialCemeterie).checked = true;
