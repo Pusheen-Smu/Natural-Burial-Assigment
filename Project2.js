@@ -77,11 +77,7 @@ function populateFormFields() {
 
 //Function to make final submission
 function submit() {
-    if (document.getElementById("fullName").value == "" || document.getElementById("contactPhone").value == "" ||
-        document.getElementById("burialAddress").value == "" || document.getElementById("initials").value == "") {
-        window.alert("PLEASE ENTER Name, Contact Number, Address and Initials");
-
-    } else {
+    
 
         const finalData = getInfo();
         // Final Store JSON object in local browser storage
@@ -91,6 +87,6 @@ function submit() {
         } else {
             console.log("Local storage is not available.");
         }
-    }
+   
 }
 
