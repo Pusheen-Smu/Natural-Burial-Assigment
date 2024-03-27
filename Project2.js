@@ -50,7 +50,6 @@ function populateFormFields() {
     let storedFormData;
     if (typeof Storage !== "undefined") {
         storedFormData = JSON.parse(localStorage.getItem("formData"));
-        console.log(JSON.parse(window.localStorage.getItem("formData")));
     } else {
         console.log("Local storage is not available.");
     }
@@ -83,7 +82,6 @@ function submit() {
         // Final Store JSON object in local browser storage
         if (typeof Storage !== "undefined") {
             window.localStorage.setItem('submitData', JSON.stringify(finalData));
-            console.log(JSON.parse(window.localStorage.getItem("submitData")));
         } else {
             console.log("Local storage is not available.");
         }
