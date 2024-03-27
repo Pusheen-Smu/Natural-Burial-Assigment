@@ -25,7 +25,7 @@
 
     <script src="audioPackage/audio.js"></script>
     <script src="Project2.js"></script>
-    <!-- Jquary/Tailwind-->
+    <!-- Jquery/Tailwind-->
     <script src=""></script>
     <script src=""></script>
     <script src=""></script>
@@ -33,10 +33,10 @@
 
 <body onload="populateFormFields()">
     <!--Heading of the webpage-->
-    <h2 class="mainPage">Natural Burial</h2>
+    <h2>Natural Burial</h2>
+    <form class="flexContainer">
+        <!-- Start FlexBox-->
 
-    <!-- Start FlexBox-->
-    <div class="mainPage" class="flexContainer">
         <!-- Theme Bar.with toggle switch dark and light mode with event listener(will be add in js next project) -->
         <div id="toggleSwitch" class="switch">
             <label id="toggleLabel" class="switchLabel">Dark Theme</label>
@@ -46,12 +46,12 @@
         </div>
         <div>
             <!-- Icon for text to audio-->
-            <button class="videoHelperBtn" onclick="fullname()">
+            <button class="videoHelperBtn" onclick="fullName()">
                 <i class="bi bi-caret-right-square-fill"></i>
             </button>
             <!-- input field for name -->
-            Full Name:<br>
-            <input type="text" class="inputField" id="fullName" name="name" required>
+            Full Name:
+            <input type="text" class="inputField" id="fullName" name="fullName" required>
         </div><br>
         <div>
             <!-- Icon button for text to audio-->
@@ -59,7 +59,7 @@
                 <i class="bi bi-caret-right-square-fill"></i>
             </button>
             <!-- input field for date of birth and use placeholder for format-->
-            Date Of Birth:<br>
+            Date Of Birth:
             <input type="text" class="inputField" id="birthDate" name="birthDate" placeholder="YYYY-MM-DD" required>
         </div><br>
         <div>
@@ -67,22 +67,22 @@
             <button id="phoneHelper" class="videoHelperBtn" onclick="phoneNumber()">
                 <i class="bi bi-caret-right-square-fill"></i>
             </button>
-            Phone:<br>
+            Phone:
             <input type="tel" class="inputField" id="contactPhone" name="contactPhone" required> <br><br>
             <!-- Icon button for text to audio -->
             <button id="emailAddressHelper" class="videoHelperBtn" onclick="email()">
                 <i class="bi bi-caret-right-square-fill"></i>
             </button>
             <!-- input field for contact-address -->
-            Email Address:<br>
+            Email:
             <input type="text" class="inputField" id="emailAddress" name="emailAddress" required>
-            <br>
+            <br><br>
             <!-- Icon button for text to audio -->
             <button id="addressHelper" class="videoHelperBtn" onclick="address()">
                 <i class="bi bi-caret-right-square-fill"></i>
             </button>
             <!-- input field for contact-address -->
-            Address:<br>
+            Address:
             <input type="text" class="inputField" id="contactAddress" name="contactAddress" required>
             <br><br>
 
@@ -90,7 +90,7 @@
                 <i class="bi bi-caret-right-square-fill"></i>
             </button>
             <!-- input field for contact-address -->
-            Burial Location:<br>
+            Burial Location:
             <input type="text" class="inputField" id="burialAddress" name="burial Address" required><br><br>
         </div>
         <div>
@@ -167,7 +167,7 @@
                     <i class="bi bi-caret-right-square-fill"></i>
                 </button>
                 <!-- select bar for marker option -->
-                Please select Marker options: <br>
+                Please select Marker options:
 
                 <input type="radio" name="marker" value="markerGPS" id="gps">
                 <label for="gps">GPS Location</label><br>
@@ -184,29 +184,30 @@
             </div>
             <div>
                 <!--Icon button for text to audio-->
-                <button id="personalMsgHelper" class="videoHelperBtn" onclick= "personalMessage()">
+                <button id="personalMsgHelper" class="videoHelperBtn" onclick="personalMessage()">
                     <i class="bi bi-caret-right-square-fill"></i>
                 </button>
                 <!-- input field for personal msg -->
-                Personalized Preference/Message:<br>
+                Personalized Preference/Message:
                 <input type="text" class="inputField" id="message" name="message">
             </div><br>
             <div>
                 <!-- Icon button for text to audio -->
-                <button id="initialHelper" class="videoHelperBtn" onclick= "initials()">
+                <button id="initialHelper" class="videoHelperBtn" onclick="initials()">
                     <i class="bi bi-caret-right-square-fill"></i>
                 </button>
                 <!-- input field for initials -->
-                Initials:<br>
+                Initials:
                 <input type="text" class="inputField" id="initials" name="initials"> <br>
             </div><br>
             <div>
                 <!-- submit button -->
-                <button class="submitBtn" onclick = "submit()">
+                <button type="button" class="submitBtn" onclick="submitFormData()">
                     Submit
                 </button>
             </div><br>
-        </div>
+    </form>
 </body>
 
 </html>
+  
