@@ -1,4 +1,4 @@
- <!-- 
+<!-- 
     The purpose of this file is to make a natural burial webpage
     for our client MaryAnne. It includes personal information to enter and 
     realted to burial site, marker option etc.
@@ -18,45 +18,42 @@
     <title>Natural Burial Form</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Made Project1.css accessible to this file -->
-    <link rel="stylesheet" href="Project2.css">
-    <!-- Link for bootstrap icon file-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-
     <script src="audioPackage/audio.js"></script>
     <script src="Project2.js"></script>
     <!-- Jquery/Tailwind-->
-    <script src=""></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src=""></script>
     <script src=""></script>
 </head>
 
-<body onload="populateFormFields()">
+<body onload="load()">
     <!--Heading of the webpage-->
-    <h2>Natural Burial</h2>
-    <form class="flexContainer">
+    <form id = "flexContainer">
+        <div>Natural Burial</div> <br>
         <!-- Start FlexBox-->
 
         <!-- Theme Bar.with toggle switch dark and light mode with event listener(will be add in js next project) -->
-        <div id="toggleSwitch" class="switch">
-            <label id="toggleLabel" class="switchLabel">Dark Theme</label>
-            <span class="slider" id="slider">
-                <span class="circle"></span>
-            </span>
-        </div>
-        <div>
-            <!-- Icon for text to audio-->
-            <button class="videoHelperBtn" onclick="fullName()">
-                <i class="bi bi-caret-right-square-fill"></i>
-            </button>
-            <!-- input field for name -->
-            Full Name:
-            <input type="text" class="inputField" id="fullName" name="fullName" required>
+        <button id = "darkModeButton" onclick="switchDark()">
+            DARK MODE
+        </button><br>
+        <button id = "testSave" onclick="saveData()">
+            TEST SAVE. DELETE THIS ONE BEFORE FINAL SUBMISSION
+        </button><br>
+        <button id = "testLoad" onclick="loadData()">
+            TEST LOAD. DELETE THIS ONE BEFORE FINAL SUBMISSION
+        </button><br>
+        <!-- Icon for text to audio-->
+        <button id = "fullNameButton"onclick="fullName()">
+            PLAY AUDIO
+        </button>
+        <!-- input field for name -->
+        Full Name:
+        <input type="text" class="inputField" id="fullName" name="fullName" required>
         </div><br>
         <div>
             <!-- Icon button for text to audio-->
-            <button id="dateBirthHelper" class="videoHelperBtn" onclick="dateBirth()">
-                <i class="bi bi-caret-right-square-fill"></i>
+            <button id="dateBirthButton" onclick="dateBirth()">
+                PLAY AUDIO
             </button>
             <!-- input field for date of birth and use placeholder for format-->
             Date Of Birth:
@@ -64,30 +61,30 @@
         </div><br>
         <div>
             <!--Icon button for text to audio-->
-            <button id="phoneHelper" class="videoHelperBtn" onclick="phoneNumber()">
-                <i class="bi bi-caret-right-square-fill"></i>
+            <button id="phoneButton" onclick="phoneNumber()">
+                PLAY AUDIO
             </button>
             Phone:
             <input type="tel" class="inputField" id="contactPhone" name="contactPhone" required> <br><br>
             <!-- Icon button for text to audio -->
-            <button id="emailAddressHelper" class="videoHelperBtn" onclick="email()">
-                <i class="bi bi-caret-right-square-fill"></i>
+            <button id="emailAddressButton" onclick="email()">
+                PLAY AUDIO
             </button>
             <!-- input field for contact-address -->
             Email:
             <input type="text" class="inputField" id="emailAddress" name="emailAddress" required>
             <br><br>
             <!-- Icon button for text to audio -->
-            <button id="addressHelper" class="videoHelperBtn" onclick="address()">
-                <i class="bi bi-caret-right-square-fill"></i>
+            <button id="addressButton" onclick="address()">
+                PLAY AUDIO
             </button>
             <!-- input field for contact-address -->
             Address:
             <input type="text" class="inputField" id="contactAddress" name="contactAddress" required>
             <br><br>
 
-            <button id="burialAddressHelper" class="videoHelperBtn" onclick="burialLocation()">
-                <i class="bi bi-caret-right-square-fill"></i>
+            <button id="burialAddressButton" onclick="burialLocation()">
+                PLAY AUDIO
             </button>
             <!-- input field for contact-address -->
             Burial Location:
@@ -95,101 +92,79 @@
         </div>
         <div>
             <!-- Icon button for text to audio -->
-            <button id="realtionHelper" class="videoHelperBtn" onclick="relationWithDeceased()">
-                <i class="bi bi-caret-right-square-fill"></i>
+            <button id="realtionButton" onclick="relationWithDeceased()">
+                PLAY AUDIO
             </button>
             <!-- select bar for realtion and used radio button -->
             Relation with deceased:
             <div>
-                <input type="radio" name="relationDeceased" value="family" id="family">
-                <label for="relationFamily">Family</label><br>
-            </div>
-            <div>
-                <input type="radio" name="relationDeceased" value="friends" id="friends">
-                <label for="relationFamily">Friends</label><br>
-            </div>
-            <div>
-                <input type="radio" name="relationDeceased" value="other" id="others">
-                <label for="relationOthers">Others</label><br><br>
+                <input type="checkbox" name="relationDeceased[]" value="family" id="family">
+                <label for="family">Family</label><br>
+                <input type="checkbox" name="relationDeceased[]" value="friends" id="friends">
+                <label for="friends">Friends</label><br>
+                <input type="checkbox" name="relationDeceased[]" value="other" id="others">
+                <label for="others">Others</label><br><br>
             </div>
         </div>
         <div>
             <!-- Icon button for text to audio-->
-            <button id="burialTypeHelper" class="videoHelperBtn" onclick="naturalBurialCemeterie()">
-                <i class="bi bi-caret-right-square-fill"></i>
+            <button id="burialTypeButton" onclick="naturalBurialCemeterie()">
+                PLAY AUDIO
             </button>
             <!-- select bar for cemeterie type options -->
             Type of natural burial cemeterie:
-
             <div>
-                <input type="radio" name="burialCemeterie" value="Hybrid grounds" id="hybrid">
-                <label for="hybrid">Hybrid burial grounds</label>
-            </div>
-            <div>
-                <input type="radio" name="burialCemeterie" value="Natural grounds" id="natural">
-                <label for="natural">Natural burial grounds</label>
-            </div>
-            <div>
-                <input type="radio" name="burialCemeterie" value="Conservation grounds" id="conservative">
-                <label for="conservative">Conservation burial grounds</label><br><br>
+                <input type="checkbox" name="burialCemeterie[]" value="Hybrid grounds" id="hybrid_bg">
+                <label for="hybrid_bg">Hybrid burial grounds</label><br>
+                <input type="checkbox" name="burialCemeterie[]" value="Natural grounds" id="natural_bg">
+                <label for="natural_bg">Natural burial grounds</label><br>
+                <input type="checkbox" name="burialCemeterie[]" value="Conservation grounds" id="conservation_bg">
+                <label for="conservation_bg">Conservation burial grounds</label><br><br>
             </div>
         </div>
         <div>
             <!-- Icon button for text to audio -->
-            <button id="burialMethodHelper" class="videoHelperBtn" onclick="burialMethod()">
-                <i class="bi bi-caret-right-square-fill"></i>
+            <button id="burialMethodButton" onclick="burialMethod()">
+                PLAY AUDIO
             </button>
             <!-- select bar for burial method options -->
             Burial Method:
-
             <div>
-                <input type="radio" name="burialMethod" value="Shrouds" id="shrouds">
-                <label for="shrouds">Shrouds</label>
-            </div>
-            <div>
-                <input type="radio" name="burialMethod" value="WovenCaskets" id="wovenCaskets">
-                <label for="wovenCaskets">Woven Caskets</label>
-            </div>
-            <div>
-                <input type="radio" name="burialMethod" value="CardboardContainers" id="cardboardContainer">
-                <label for="cardboardContainer">Cardboard Containers</label>
-            </div>
-            <div>
-                <input type="radio" name="burialMethod" value="TreePod" id="treePod">
-                <label for="treePod">Tree Pod</label>
-            </div>
-         <div>
-                <input type="radio" name="burialMethod" value="Others" id="other">
-                <label for="other">Others</label>
+                <input type="checkbox" name="burialMethod[]" value="Shrouds" id="shrouds">
+                <label for="shrouds">Shrouds</label><br>
+                <input type="checkbox" name="burialMethod[]" value="WovenCaskets" id="woven_caskets">
+                <label for="woven_caskets">Woven Caskets</label><br>
+                <input type="checkbox" name="burialMethod[]" value="CardboardContainers" id="cardboard_containers">
+                <label for="cardboard_containers">Cardboard Containers</label><br>
+                <input type="checkbox" name="burialMethod[]" value="TreePod" id="tree_pod">
+                <label for="tree_pod">Tree Pod</label><br>
             </div><br>
         </div>
 
         <div>
             <div>
                 <!--Icon button for text to audio-->
-                <button class="videoHelperBtn" onclick="markerOptions()">
-                    <i class="bi bi-caret-right-square-fill"></i>
+                <button onclick="markerOptions()">
+                    PLAY AUDIO
                 </button>
                 <!-- select bar for marker option -->
-                Please select Marker options:
+                Please select Marker options:<br>
+                <input type="checkbox" name="marker[]" value="markerGPS" id="gps_location">
+                <label for="gps_location">GPS Location</label><br>
 
-                <input type="radio" name="marker" value="markerGPS" id="gps Location">
-                <label for="gps">GPS Location</label><br>
+                <input type="checkbox" name="marker[]" value="markerWoodenPlank" id="wooden_plank">
+                <label for="wooden_plank">Wooden Plank</label><br>
 
-                <input type="radio" name="marker" value="markerWoodenPlank" id="wooden Plank">
-                <label for="wooden">Wooden Plank</label><br>
+                <input type="checkbox" name="marker[]" value="markerEngravedStone" id="engraved_stones">
+                <label for="engraved_stones">Engraved stones or rocks</label><br>
 
-                <input type="radio" name="marker" value="markerEngravedStone" id="engraved Stones">
-                <label for="stone">Engraved stones or rocks</label><br>
-
-                <input type="radio" name="marker" value="biodegeradableMaterial" id="biodigeradable Material">
-                <label for="bio">Biodegradable Material</label><br>
-                <br>
+                <input type="checkbox" name="marker[]" value="biodegradableMaterial" id="biodegradable_material">
+                <label for="biodegradable_material">Biodegradable Material</label><br><br>
             </div>
             <div>
                 <!--Icon button for text to audio-->
-                <button id="personalMsgHelper" class="videoHelperBtn" onclick="personalMessage()">
-                    <i class="bi bi-caret-right-square-fill"></i>
+                <button id="personalMsgButton" onclick="personalMessage()">
+                    PLAY AUDIO
                 </button>
                 <!-- input field for personal msg -->
                 Personalized Preference/Message:
@@ -197,8 +172,8 @@
             </div><br>
             <div>
                 <!-- Icon button for text to audio -->
-                <button id="initialHelper" class="videoHelperBtn" onclick="initials()">
-                    <i class="bi bi-caret-right-square-fill"></i>
+                <button id="initialButton" onclick="initials()">
+                    PLAY AUDIO
                 </button>
                 <!-- input field for initials -->
                 Initials:
@@ -214,4 +189,3 @@
 </body>
 
 </html>
-  
