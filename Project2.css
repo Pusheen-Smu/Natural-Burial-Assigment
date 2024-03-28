@@ -16,10 +16,7 @@ body {
 
 /* For audio button style*/
 .videoHelperBtn {
-    padding: 0;
-    border: none;
-    background-color: transparent;
-    font-size: 1.35rem;
+    
 }
 
 /*for submit button style*/
