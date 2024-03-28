@@ -26,7 +26,7 @@
     <script src=""></script>
 </head>
 
-<body onload="load()">
+<body onload="populateFormFields()">
     <!--Heading of the webpage-->
     <form id = "flexContainer">
         <div>Natural Burial</div> <br>
@@ -36,12 +36,7 @@
         <button id = "darkModeButton" onclick="switchDark()">
             DARK MODE
         </button><br>
-        <button id = "testSave" onclick="saveData()">
-            TEST SAVE. DELETE THIS ONE BEFORE FINAL SUBMISSION
-        </button><br>
-        <button id = "testLoad" onclick="loadData()">
-            TEST LOAD. DELETE THIS ONE BEFORE FINAL SUBMISSION
-        </button><br>
+        
         <!-- Icon for text to audio-->
         <button id = "fullNameButton"onclick="fullname()">
             PLAY AUDIO
