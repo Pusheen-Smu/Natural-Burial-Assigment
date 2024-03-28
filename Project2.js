@@ -9,176 +9,83 @@ Author(Group):
 */
 
 
-let darkMode = false;
+// Function to get user input data
+function getInfo() {
+    // Create JSON object with user input data
+    const formData = {
+        fullName: document.getElementById("fullName").value,
+        birthDate: document.getElementById("birthDate").value,
+        contactPhone: document.getElementById("contactPhone").value,
+        contactEmail: document.getElementById("emailAddress").value,
+        contactAddress: document.getElementById("contactAddress").value,
+        burialAddress: document.getElementById("burialAddress").value,
+        relationDeceased: document.querySelector('input[name="relationDeceased"]:checked').id,
+        burialCemeterie: document.querySelector('input[name="burialCemeterie"]:checked').id,
+        burialMethod: document.querySelector('input[name="burialMethod"]:checked').id,
+        marker: document.querySelector('input[name="marker"]:checked').id,
+        message: document.getElementById("message").value,
+        initials: document.getElementById("initials").value
+    };
+    return formData;
 
-function load() {
-    try {
-        loadMainTheme();
-    }
-    catch (e) {
-        console.error(error);
-    }
 }
 
-function loadMainTheme() {
-    document.body.style.backgroundImage = "url('audioPackage/day.jpg')";
-    let container = document.getElementById("flexContainer");
-    container.style.fontSize = "16pt";
-    container.style.fontFamily = "Times New Roman, serif";
-    container.style.fontFamily = "Times New Roman, serif";
-
-    // Select all buttons in the document
-    let buttons = document.querySelectorAll("button");
-
-    // Loop through each button and apply the styles
-    buttons.forEach(function (button) {
-        button.style.fontSize = "16pt";
-        button.style.fontFamily = "Times New Roman, serif";
-    });
-}
-
-function switchDark() {
-    // Toggles the darkMode variable
-    darkMode = !darkMode;
-
-    // Select the body element
-    let body = document.body;
-
-    // Check if darkMode is true, apply dark theme classes; otherwise, apply light theme classes
-    if (darkMode) {
-        body.classList.add('dark'); // Enable dark mode
-        body.style.backgroundColor = 'black'; // Set background color to black
-        body.style.color = 'white'; // Set text color to white
-
-        // Optionally, change the background image to a dark-themed one
-        body.style.backgroundImage = "url('audioPackage/dark.jpg')";
-
-        // Tailwind CSS Dark mode class changes for other elements if necessary
-        // For example, changing button background and text color
-        document.querySelectorAll("button").forEach(button => {
-            button.classList.add('bg-gray-800', 'text-white'); // Example classes for dark mode
-            button.classList.remove('bg-gray-200', 'text-black'); // Removing light mode classes
-        });
+// Function to autosave info in local storage r regular intervals
+function autoSave() {
+    const saveData = getInfo();
+    // Store JSON object in local browser storage
+    if (typeof Storage !== "undefined") {
+        window.localStorage.setItem("formData", JSON.stringify(saveData));
     } else {
-        body.classList.remove('dark'); // Disable dark mode
-        body.style.backgroundColor = 'white'; // Set background color to white
-        body.style.color = 'black'; // Set text color to black
-
-        // Optionally, change the background image back to a light-themed one
-        body.style.backgroundImage = "url('audioPackage/day.jpg')";
-
-        // Tailwind CSS Light mode class changes for other elements if necessary
-        document.querySelectorAll("button").forEach(button => {
-            button.classList.remove('bg-gray-800', 'text-white'); // Removing dark mode classes
-            button.classList.add('bg-gray-200', 'text-black'); // Example classes for light mode
-        });
+        console.log("Local storage is not available.");
     }
 }
 
-function saveData() {
-    // Object to hold form data
-    let formData = {};
+setInterval(autoSave, 6000); // autoSave every 1 minutes
 
-    // Function to safely add field values if they're not empty
-    function addFieldIfNotEmpty(fieldName, elementId) {
-        const value = document.getElementById(elementId).value;
-        if (value.trim() !== "") { // Check if the field is not just empty spaces
-            formData[fieldName] = value;
-        }
-    }
 
-    // Add fields only if they are filled
-    addFieldIfNotEmpty("fullName", "fullName");
-    addFieldIfNotEmpty("birthDate", "birthDate");
-    addFieldIfNotEmpty("contactPhone", "contactPhone");
-    addFieldIfNotEmpty("emailAddress", "emailAddress");
-    addFieldIfNotEmpty("contactAddress", "contactAddress");
-    addFieldIfNotEmpty("burialAddress", "burialAddress");
-    addFieldIfNotEmpty("message", "message");
-    addFieldIfNotEmpty("initials", "initials");
-
-    // Initialize arrays for checkboxes
-    formData.relationDeceased = [];
-    formData.burialCemeterie = [];
-    formData.burialMethod = [];
-    formData.marker = [];
-
-    // Capture checkboxes
-    document.querySelectorAll('input[type=checkbox]').forEach((checkbox) => {
-        if (checkbox.checked) {
-            if (checkbox.name === "relationDeceased[]") {
-                formData.relationDeceased.push(checkbox.value);
-            } else if (checkbox.name === "burialCemeterie[]") {
-                formData.burialCemeterie.push(checkbox.value);
-            } else if (checkbox.name === "burialMethod[]") {
-                formData.burialMethod.push(checkbox.value);
-            } else if (checkbox.name === "marker[]") {
-                formData.marker.push(checkbox.value);
-            }
-        }
-    });
-
-    // Save formData to localStorage
-    localStorage.setItem("formData", JSON.stringify(formData));
-    alert("Form data saved successfully!");
-
-    // Function to clear all form inputs and checkboxes
-    function clearFormInputs() {
-        document.querySelectorAll('.inputField').forEach((input) => {
-            input.value = ''; // Clear text inputs
-        });
-        document.querySelectorAll('input[type=checkbox]').forEach((checkbox) => {
-            checkbox.checked = false; // Uncheck checkboxes
-        });
-    }
-
-    // Call the clear function to reset form fields
-    clearFormInputs();
-}
-
-function loadData() {
-    // Retrieve the stored data
-    let storedData = localStorage.getItem("formData");
-
-    if (storedData) {
-        let formData = JSON.parse(storedData);
-
-        // Populate form fields
-        document.getElementById("fullName").value = formData.fullName;
-        document.getElementById("birthDate").value = formData.birthDate;
-        document.getElementById("contactPhone").value = formData.contactPhone;
-        document.getElementById("emailAddress").value = formData.emailAddress;
-        document.getElementById("contactAddress").value = formData.contactAddress;
-        document.getElementById("burialAddress").value = formData.burialAddress;
-        document.getElementById("message").value = formData.message;
-        document.getElementById("initials").value = formData.initials;
-
-        // Populate checkboxes
-        formData.relationDeceased.forEach(value => {
-            document.querySelector(`input[name="relationDeceased[]"][value="${value}"]`).checked = true;
-        });
-        formData.burialCemeterie.forEach(value => {
-            document.querySelector(`input[name="burialCemeterie[]"][value="${value}"]`).checked = true;
-        });
-        formData.burialMethod.forEach(value => {
-            document.querySelector(`input[name="burialMethod[]"][value="${value}"]`).checked = true;
-        });
-        formData.marker.forEach(value => {
-            document.querySelector(`input[name="marker[]"][value="${value}"]`).checked = true;
-        });
-
-        alert("Form data loaded successfully!");
+// Function to retrieve user data from local browser storage and populate the webpage
+function populateFormFields() {
+    // Retrieve JSON object from local storage
+    let storedFormData;
+    if (typeof Storage !== "undefined") {
+        storedFormData = JSON.parse(localStorage.getItem("formData"));
+        console.log(JSON.parse(window.localStorage.getItem("formData")));
     } else {
-        alert("No saved data found!");
+        console.log("Local storage is not available.");
+    }
+
+    // Check if there's data stored
+    if (storedFormData) {
+        // Populate input fields with stored data
+        document.getElementById("fullName").value = storedFormData.fullName;
+        document.getElementById("birthDate").value = storedFormData.birthDate;
+        document.getElementById("contactPhone").value = storedFormData.contactPhone;
+        document.getElementById("emailAddress").value = storedFormData.contactEmail;
+        document.getElementById("contactAddress").value = storedFormData.contactAddress;
+        document.getElementById("burialAddress").value = storedFormData.burialAddress;
+        document.getElementById("message").value = storedFormData.message;
+        document.getElementById("initials").value = storedFormData.initials;
+        // Check the radio buttons based on stored data
+        document.getElementById(storedFormData.relationDeceased).checked = true;
+       document.getElementById(storedFormData.burialCemeterie).checked = true;
+        document.getElementById(storedFormData.burialMethod).checked = true;
+        document.getElementById(storedFormData.marker).checked = true;
+
     }
 }
 
-document.addEventListener('DOMContentLoaded', (event) => {
-    document.getElementById('testLoad').addEventListener('click', function(e) {
-        e.preventDefault(); // Prevent default button action
-        loadData(); // Call your loadData function
-    });
-});
+//Function to make final submission
+function submit() {
+    
 
-
-
+        const finalData = getInfo();
+        // Final Store JSON object in local browser storage
+        if (typeof Storage !== "undefined") {
+            window.localStorage.setItem('submitData', JSON.stringify(finalData));
+            console.log(JSON.parse(window.localStorage.getItem("submitData")));
+        } else {
+            console.log("Local storage is not available.");
+        }
+   
+}
