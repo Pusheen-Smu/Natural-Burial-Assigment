@@ -1,0 +1,68 @@
+/* File: Project2Tailwind.css */
+
+/* Body styles */
+body {
+    @apply text-2xl;
+    font: 2em sans-serif;
+}
+
+
+/* Flex container styles */
+.flexContainer {
+    @apply flex flex-col items-start;
+}
+
+/* Switch styles */
+.switch {
+    @apply relative inline-block w-16 select-none mb-4;
+}
+
+/* Switch label styles */
+.switchLabel {
+    @apply text-sm font-semibold text-gray-600;
+}
+
+/* Slider styles */
+.slider {
+    @apply absolute cursor-pointer rounded-full bg-gray-300 border-2 border-gray-300;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: .4s;
+}
+
+/* Circle styles */
+.circle {
+    @apply absolute h-6 w-6 rounded-full bg-white shadow inset-y-0 left-0;
+    transition: .4s;
+}
+
+/* Slider checked styles */
+.slider.checked {
+    @apply bg-blue-500;
+}
+
+/* Circle checked styles */
+.circle.checked {
+    @apply transform translate-x-full bg-white;
+}
+
+/* Icon button styles */
+.videoHelperBtn {
+    @apply 
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    font-size: 1.35rem;
+}
+
+/* Input field styles */
+.inputField {
+    @apply text-xl w-80 h-8 border rounded-md px-2 py-1;
+}
+
+/* Submit button styles */
+.submitBtn {
+    @apply text-xl bg-blue-500 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-600;
+}
