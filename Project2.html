@@ -31,19 +31,16 @@
     <script src=""></script>
 </head>
 
-<body onload="populateFormFields()">
+<body onload="">
     <!--Heading of the webpage-->
     <h2>Natural Burial</h2>
     <form class="flexContainer">
         <!-- Start FlexBox-->
 
         <!-- Theme Bar.with toggle switch dark and light mode with event listener(will be add in js next project) -->
-        <div id="toggleSwitch" class="switch">
-            <label id="toggleLabel" class="switchLabel">Dark Theme</label>
-            <span class="slider" id="slider">
-                <span class="circle"></span>
-            </span>
-        </div>
+        <button onclick="switchDark()">
+            DARK SWITCH (TEST)
+        </button>
         <div>
             <!-- Icon for text to audio-->
             <button class="videoHelperBtn" onclick="fullname()">
