@@ -12,6 +12,40 @@ Author(Group):
 // Function to get user input data
 function getInfo() {
     // Create JSON object with user input data
+    let relation;
+    let checkRadio1 = document.querySelector(
+        'input[name="relationDeceased"]:checked');
+    if(checkRadio1 != null) {
+       relation= checkRadio1.id
+    } else {
+        relation = "None";
+    }
+    let cemeterie;
+    let checkRadio2 = document.querySelector(
+        'input[name="burialCemeterie"]:checked');
+    if(checkRadio2 != null) {
+       cemeterie= checkRadio2.id
+    } else {
+        cemeterie = "None";
+    }
+    let method;
+    let checkRadio3 = document.querySelector(
+        'input[name="burialMethod"]:checked');
+    if(checkRadio3 != null) {
+       method= checkRadio3.id
+    } else {
+        method = "None";
+    }
+    let marker;
+    let checkRadio4 = document.querySelector(
+        'input[name="marker"]:checked');
+    if(checkRadio4 != null) {
+       marker= checkRadio4.id
+    } else {
+        marker = "None";
+    }
+
+    
     const formData = {
         fullName: document.getElementById("fullName").value,
         birthDate: document.getElementById("birthDate").value,
@@ -19,10 +53,10 @@ function getInfo() {
         contactEmail: document.getElementById("emailAddress").value,
         contactAddress: document.getElementById("contactAddress").value,
         burialAddress: document.getElementById("burialAddress").value,
-        relationDeceased: document.querySelector('input[name="relationDeceased"]:checked').id,
-        burialCemeterie: document.querySelector('input[name="burialCemeterie"]:checked').id,
-        burialMethod: document.querySelector('input[name="burialMethod"]:checked').id,
-        marker: document.querySelector('input[name="marker"]:checked').id,
+        relationDeceased: relation,
+        burialCemeterie: cemeterie,
+        burialMethod: method,
+        burialMarker: marker,
         message: document.getElementById("message").value,
         initials: document.getElementById("initials").value
     };
@@ -35,7 +69,7 @@ function autoSave() {
     const saveData = getInfo();
     // Store JSON object in local browser storage
     if (typeof Storage !== "undefined") {
-        window.localStorage.setItem("formData", JSON.stringify(saveData));
+        window.localStorage.setItem("formmData", JSON.stringify(saveData));
     } else {
         console.log("Local storage is not available.");
     }
@@ -49,8 +83,8 @@ function populateFormFields() {
     // Retrieve JSON object from local storage
     let storedFormData;
     if (typeof Storage !== "undefined") {
-        storedFormData = JSON.parse(localStorage.getItem("formData"));
-        console.log(JSON.parse(window.localStorage.getItem("formData")));
+        storedFormData = JSON.parse(localStorage.getItem("formmData"));
+        console.log(JSON.parse(window.localStorage.getItem("formmData")));
     } else {
         console.log("Local storage is not available.");
     }
@@ -67,11 +101,23 @@ function populateFormFields() {
         document.getElementById("message").value = storedFormData.message;
         document.getElementById("initials").value = storedFormData.initials;
         // Check the radio buttons based on stored data
-        document.getElementById(storedFormData.relationDeceased).checked = true;
-       document.getElementById(storedFormData.burialCemeterie).checked = true;
-        document.getElementById(storedFormData.burialMethod).checked = true;
-        document.getElementById(storedFormData.marker).checked = true;
-
+         
+        if( !(storedFormData.relationDeceased=="None")){
+            document.getElementById(storedFormData.relationDeceased).checked=true;
+        }
+        
+        if(!(storedFormData.burialCemeterie=="None")){
+            document.getElementById(storedFormData.burialCemeterie).checked=true;
+        }
+        
+        if(!(storedFormData.burialMethod=="None")){
+            document.getElementById(storedFormData.burialMethod).checked=true;
+        }
+        
+        if(!(storedFormData. burialMarker=="None")){
+            document.getElementById(storedFormData. burialMarker).checked=true;
+        }
+      
     }
 }
 
@@ -82,7 +128,7 @@ function submit() {
         const finalData = getInfo();
         // Final Store JSON object in local browser storage
         if (typeof Storage !== "undefined") {
-            window.localStorage.setItem('submitData', JSON.stringify(finalData));
+            window.localStorage.setItem('submitmitData', JSON.stringify(finalData));
             console.log(JSON.parse(window.localStorage.getItem("submitData")));
         } else {
             console.log("Local storage is not available.");
