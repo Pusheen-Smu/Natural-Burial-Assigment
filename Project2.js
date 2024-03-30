@@ -11,41 +11,29 @@ Author(Group):
 
 // Function to get user input data
 function getInfo() {
-    // Create JSON object with user input data
-    let relation;
-    let checkRadio1 = document.querySelector(
-        'input[name="relationDeceased"]:checked');
-    if(checkRadio1 != null) {
-       relation= checkRadio1.id
-    } else {
-        relation = "None";
-    }
-    let cemeterie;
-    let checkRadio2 = document.querySelector(
-        'input[name="burialCemeterie"]:checked');
-    if(checkRadio2 != null) {
-       cemeterie= checkRadio2.id
-    } else {
-        cemeterie = "None";
-    }
-    let method;
-    let checkRadio3 = document.querySelector(
-        'input[name="burialMethod"]:checked');
-    if(checkRadio3 != null) {
-       method= checkRadio3.id
-    } else {
-        method = "None";
-    }
-    let marker;
-    let checkRadio4 = document.querySelector(
-        'input[name="marker"]:checked');
-    if(checkRadio4 != null) {
-       marker= checkRadio4.id
-    } else {
-        marker = "None";
-    }
 
+    //function to get value from radio button
+    function checkRadio(radio){
+        let variable;
+    if(radio != null) {
+       variable= radio.id
+    } else {
+        variable = "None";
+    }
+    return variable;
+    }
     
+    //finding if radio button is checked
+    let relation = document.querySelector(
+        'input[name="relationDeceased"]:checked');
+    let cemeterie = document.querySelector(
+         'input[name="burialCemeterie"]:checked');
+    let method = document.querySelector(
+            'input[name="burialMethod"]:checked');
+    let marker = document.querySelector(
+            'input[name="marker"]:checked');
+
+    // Create JSON object with user input data
     const formData = {
         fullName: document.getElementById("fullName").value,
         birthDate: document.getElementById("birthDate").value,
@@ -53,10 +41,10 @@ function getInfo() {
         contactEmail: document.getElementById("emailAddress").value,
         contactAddress: document.getElementById("contactAddress").value,
         burialAddress: document.getElementById("burialAddress").value,
-        relationDeceased: relation,
-        burialCemeterie: cemeterie,
-        burialMethod: method,
-        burialMarker: marker,
+        relationDeceased: checkRadio(relation),
+        burialCemeterie: checkRadio(cemeterie),
+        burialMethod: checkRadio(method),
+        burialMarker: checkRadio(marker),
         message: document.getElementById("message").value,
         initials: document.getElementById("initials").value
     };
