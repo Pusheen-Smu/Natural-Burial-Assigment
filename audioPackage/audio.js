@@ -35,7 +35,7 @@ function fullname() {
     fullNameAudio.play();
 }
 
-function initials() {
+function initial() {
     initialsAudio.play();
 }
 
