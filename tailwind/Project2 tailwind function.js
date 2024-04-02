@@ -1,3 +1,4 @@
+
 //
 let darkMode = false;
 
@@ -31,11 +32,11 @@ function switchDark() {
 
         // Tailwind CSS Light mode class changes for other elements if necessary
         document.querySelectorAll('.videoHelperBtn').forEach(button => {
-            button.classList.remove('bg-sky-500', 'text-black', 'text-2xl', 'rounded-full','border-amber-200','border-4'); // Removing dark mode classes
-            button.classList.add('bg-pink-300', 'text-white', 'text-2xl', 'rounded-full','border-pink-500','border-4'); // Example classes for light mode
+            button.classList.remove('bg-sky-500', 'text-black', 'text-5xl', 'rounded-full','border-amber-200','border-4'); // Removing dark mode classes
+            button.classList.add('bg-pink-300', 'text-white', 'text-5xl', 'rounded-full','border-pink-500','border-4'); // Example classes for light mode
         });
     }
-        document.querySelectorAll('input').forEach(input => {
+    document.querySelectorAll('input').forEach(input => {
         input.style.color = 'black'; // Set text color to black in dark mode
     });
 }
