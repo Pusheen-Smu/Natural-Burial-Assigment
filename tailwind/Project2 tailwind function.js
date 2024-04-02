@@ -35,5 +35,8 @@ function switchDark() {
             button.classList.add('bg-pink-300', 'text-white', 'text-2xl', 'rounded-full','border-pink-500','border-4'); // Example classes for light mode
         });
     }
+        document.querySelectorAll('input').forEach(input => {
+        input.style.color = 'black'; // Set text color to black in dark mode
+    });
 }
 
