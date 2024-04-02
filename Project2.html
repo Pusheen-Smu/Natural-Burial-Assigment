@@ -12,198 +12,232 @@
 
 <!DOCTYPE html>
 <html>
-
 <head>
     <!--Title-->
     <title>Natural Burial Form</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Made Project1.css accessible to this file -->
+    <!-- Made Project2.css accessible to this file -->
     <link rel="stylesheet" href="Project2.css">
     <!-- Link for bootstrap icon file-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-
+    <!--Audio package File include javascript function for audio-->
     <script src="audioPackage/audio.js"></script>
+    <!--Javascript File-->
     <script src="Project2.js"></script>
-    <!-- Jquery/Tailwind-->
-    <script src="Project2 tailwind.js"></script>
+    <!--Tailwind Play CDN file-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!--Tailwind config file-->
+    <script src="Project2Tailwind.js"></script>
+    <!--Javascript file for toggle switch function-->
     <script src="Project2 tailwind function.js"></script>
-    <script src=""></script>
+    
 </head>
-
 <body onload="populateFormFields()">
-    <!--Heading of the webpage-->
-    <h2>Natural Burial</h2>
-    <form class="flexContainer">
-        <!-- Start FlexBox-->
 
-        <!-- Theme Bar.with toggle switch dark and light mode with event listener(will be add in js next project) -->
-        <button type="button" onclick="switchDark()">
-            DARK SWITCH (TEST)
-        </button>
-        <div>
-            <!-- Icon for text to audio-->
-            <button type="button" class="videoHelperBtn" onclick="fullname()">
-                PLAY AUDIO
+    <div class=" break-normal grid grid-cols-2  gap-x-2.5 font-sans text-7xl
+                dark:bg-gray-900 dark:text-4xl dark:font-sans">
+        <div class="col-span-2 m-4">
+            <!--Heading of the webpage-->
+            <h2 class="text-8xl md:text-center font-semibold uppercase  dark:text-teal-100">Natural Burial</h2>
+            <!-- Theme Bar.with toggle switch dark and light mode-->
+            <button onclick="switchDark()" class="text-gray-black border-gray-500 text-6xl dark:text-white dark:border-gray-300 border-4">
+                DARK SWITCH
             </button>
-            <!-- input field for name -->
-            Full Name:
-            <input type="text" class="inputField" id="fullName" name="fullName" required>
-        </div><br>
-        <div>
-            <!-- Icon button for text to audio-->
-            <button type="button" id="dateBirthHelper" class="videoHelperBtn" onclick="dateBirth()">
-                PLAY AUDIO
-            </button>
-            <!-- input field for date of birth and use placeholder for format-->
-            Date Of Birth:
-            <input type="text" class="inputField" id="birthDate" name="birthDate" required>
-        </div><br>
-        <div>
-            <!--Icon button for text to audio-->
-            <button type="button" id="phoneHelper" class="videoHelperBtn" onclick="phoneNumber()">
-                PLAY AUDIO
-            </button>
-            Phone:
-            <input type="tel" class="inputField" id="contactPhone" name="contactPhone" required> <br><br>
-            <!-- Icon button for text to audio -->
-            <button type="button" id="emailAddressHelper" class="videoHelperBtn" onclick="email()">
-                PLAY AUDIO
-            </button>
-            <!-- input field for contact-address -->
-            Email:
-            <input type="text" class="inputField" id="emailAddress" name="emailAddress" required>
-            <br><br>
-            <!-- Icon button for text to audio -->
-            <button type="button" id="addressHelper" class="videoHelperBtn" onclick="address()">
-                PLAY AUDIO
-            </button>
-            <!-- input field for contact-address -->
-            Address:
-            <input type="text" class="inputField" id="contactAddress" name="contactAddress" required>
-            <br><br>
-
-            <button type="button" id="burialAddressHelper" class="videoHelperBtn" onclick="burialLocation()">
-                PLAY AUDIO
-            </button>
-            <!-- input field for contact-address -->
-            Burial Location:
-            <input type="text" class="inputField" id="burialAddress" name="burial Address" required><br><br>
         </div>
-        <div>
-            <!-- Icon button for text to audio -->
-            <button type="button" id="realtionHelper" class="videoHelperBtn" onclick="relationWithDeceased()">
-                PLAY AUDIO
-            </button>
-            <!-- select bar for realtion and used radio button -->
-            Relation with deceased:
-            <div>
-                <input type="radio" name="relationDeceased" value="family" id="family">
-                <label for="relationFamily">Family</label><br>
+        <div class="bg-purple-200 border-8 border-violet-400 rounded-md ml-4 p-4 dark:bg-purple-900 ">
+            <div class="text-purple-950 dark:text-purple-100">
+                <div>
+                    <!-- Icon for text to audio-->
+                    <button class="videoHelperBtn" onclick="fullname()">
+                        AUDIO
+                    </button>
+                    <!-- input field for name -->
+                    Full Name:
+                    <input type="text" class="inputField" id="fullName" name="fullName" required>
+                </div><br>
+                <div>
+                    <!-- Icon button for text to audio-->
+                    <button id="dateBirthHelper" class="videoHelperBtn" onclick="dateBirth()">
+                        AUDIO
+                    </button>
+                    <!-- input field for date of birth and use placeholder for format-->
+                    Date Of Birth:
+                    <input type="text" class="inputField" id="birthDate" name="birthDate" required>
+                </div><br>
+                <div>
+                    <!--Icon button for text to audio-->
+                    <button id="phoneHelper" class="videoHelperBtn" onclick="phoneNumber()">
+                        AUDIO
+                    </button>
+                    Phone:
+                    <input type="text" class="inputField" id="contactPhone" name="contactPhone" required>
+                </div> <br>
+                <div>
+                    <!-- Icon button for text to audio -->
+                    <button id="emailAddressHelper" class="videoHelperBtn" onclick="email()">
+                        AUDIO
+                    </button>
+                    <!-- input field for contact-address -->
+                    Email Address:
+                    <input type="text" class="inputField" id="emailAddress" name="emailAddress" required>
+                </div><br>
+                <div>
+                    <!-- Icon button for text to audio -->
+                    <button id="addressHelper" class="videoHelperBtn" onclick="address()">
+                        AUDIO
+                    </button>
+                    <!-- input field for contact-address -->
+                    Address:
+                    <input type="text" class="inputField" id="contactAddress" name="contactAddress" required>
+                </div><br>
             </div>
-            <div>
-                <input type="radio" name="relationDeceased" value="friends" id="friends">
-                <label for="relationFamily">Friends</label><br>
+            <div class="p-2 rounded text-yellow-900 dark:bg-teal-900 dark:text-yellow-200">
+                <div>
+                    <!-- Icon button for text to audio -->
+                    <button id="burialAddressHelper" class="videoHelperBtn" onclick="burialLocation()">
+                        AUDIO
+                    </button>
+                    <!-- input field for burial-address -->
+                    Burial Location:
+                    <input type="text" class="inputField" id="burialAddress" name="burialAddress" required><br><br>
+                </div>
+                <div>
+                    <!-- Icon button for text to audio -->
+                    <button id="realtionHelper" class="videoHelperBtn" onclick="relationWithDeceased()">
+                        AUDIO
+                    </button>
+                    <!-- select bar for realtion and used radio button -->
+                    Relation with deceased:
+                    <div>
+                        <input type="radio" name="relationDeceased" value="family" id="family">
+                        <label for="relationFamily">Family</label><br>
+                    </div>
+                    <div>
+                        <input type="radio" name="relationDeceased" value="friends" id="friends">
+                        <label for="relationFamily">Friends</label><br>
+                    </div>
+                    <div>
+                        <input type="radio" name="relationDeceased" value="other" id="others">
+                        <label for="relationOthers">Others</label><br><br>
+                    </div>
+                </div>
+                <div>
+                    <!-- Icon button for text to audio-->
+                    <button id="burialTypeHelper" class="videoHelperBtn" onclick="naturalBurialCemeterie()">
+                         AUDIO
+                    </button>
+                    <!-- select bar for cemeterie type options -->
+                    Type of natural burial cemeterie:
+
+                    <div>
+                        <input type="radio" name="burialCemeterie" value="Hybrid grounds" id="hybrid_grounds">
+                        <label for="hybrid">Hybrid burial grounds</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="burialCemeterie" value="Natural grounds" id="natural_grounds">
+                        <label for="natural">Natural burial grounds</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="burialCemeterie" value="Conservation grounds"
+                            id="conservative_grounds">
+                        <label for="conservative">Conservation burial grounds</label><br><br>
+                    </div>
+                </div>
+                <div>
+                    <!-- Icon button for text to audio -->
+                    <button id="burialMethodHelper" class="videoHelperBtn" onclick="burialMethod()">
+                        AUDIO
+                    </button>
+                    <!-- select bar for burial method options -->
+                    Burial Method:
+
+                    <div>
+                        <input type="radio" class="h-4 w-4 " name="burialMethod" value="Shrouds" id="shrouds">
+                        <label for="shrouds">Shrouds</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="burialMethod" value="WovenCaskets" id="woven Caskets">
+                        <label for="wovenCs">Woven Caskets</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="burialMethod" value="CardboardContainers" id="cardboard Container">
+                        <label for="cardboardCn">Cardboard Containers</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="burialMethod" value="TreePod" id="treePod">
+                        <label for="treePod">Tree Pod</label>
+                    </div>
+                </div><br>
+
+                <div>
+
+                    <!--Icon button for text to audio-->
+                    <button class="videoHelperBtn" onclick="markerOptions()">
+                        AUDIO
+                    </button>
+                    <!-- select bar for marker option -->
+                    Marker options:
+                    <div>
+                        <input type="radio" name="marker" value="markerGPS" id="gps Location">
+                        <label for="gps">GPS Location</label><br>
+                    </div>
+                    <div>
+                        <input type="radio" name="marker" value="markerWoodenPlank" id="wooden Plank">
+                        <label for="wooden">Wooden Plank</label><br>
+                    </div>
+                    <div>
+                        <input type="radio" name="marker" value="markerEngravedStone" id="engraved Stones">
+                        <label for="stone">Engraved stones or rocks</label><br>
+                    </div>
+                    <div>
+                        <input type="radio" name="marker" value="biodegeradableMaterial" id="biodigeradable Material">
+                        <label for="bio">Biodegradable Material</label><br><br>
+                    </div>
+                </div>
+                <div>
+                    <!--Icon button for text to audio-->
+                    <button id="personalMsgHelper" class="videoHelperBtn" onclick="personalMessage()">
+                    AUDIO
+                    </button>
+                    <!-- input field for personal msg -->
+                     Personalized Message:<br>
+                    <input type="text" class="inputField" id="message" name="message">
+                </div><br>
             </div>
-            <div>
-                <input type="radio" name="relationDeceased" value="other" id="others">
-                <label for="relationOthers">Others</label><br><br>
+            <div class="text-purple-950 dark:text-purple-100">
+                <div>
+                    <!-- Icon button for text to audio -->
+                    <button id="initialHelper" class="videoHelperBtn" onclick="initials()">
+                        AUDIO
+                    </button>
+                    <!-- input field for initials -->
+                    Initials:
+                    <input type="text" class="inputField" id="initials" name="initials" required> <br>
+                </div><br>
+                <div >
+                    <!-- submit button -->
+                    <button type="button" class="font-mono bg-rose-500 p-2 border-4 border-gray-900 rounded-full 
+                    dark:text-gray-50 dark:border-gray-100 dark:bg-rose-900 onclick:bg-lime-400" onclick="submit()">
+                        SUBMIT
+                    </button>
+                </div>
+                <div id="submitResponse" class="font-semibold text-green-400"> </div>
             </div>
         </div>
-        <div>
-            <!-- Icon button for text to audio-->
-            <button type="button" id="burialTypeHelper" class="videoHelperBtn" onclick="naturalBurialCemeterie()">
-                PLAY AUDIO
-            </button>
-            <!-- select bar for cemeterie type options -->
-            Type of natural burial cemeterie:
+    
+        <div class=" overflow-hide relative sm:min-h-full space-y-12 mr-4 mb-2">
+            <div >
+                <img src="woodenPlanks1.jpg" alt="image1" class="rounded-sm w-full h-[48rem] border-4 border-cyan-500 ">
+            </div>
+            <div >
+                <img src="shroud2.jpg" alt="image2"class="rounded-md object-cover w-full h-[52rem] border-4 border-cyan-500">
+            </div>
+            
 
-            <div>
-                <input type="radio" name="burialCemeterie" value="Hybrid grounds" id="hybrid bg">
-                <label for="hybrid">Hybrid burial grounds</label>
-            </div>
-            <div>
-                <input type="radio" name="burialCemeterie" value="Natural grounds" id="natural bg">
-                <label for="natural">Natural burial grounds</label>
-            </div>
-            <div>
-                <input type="radio" name="burialCemeterie" value="Conservation grounds" id="conservative bg">
-                <label for="conservative">Conservation burial grounds</label><br><br>
-            </div>
         </div>
-        <div>
-            <!-- Icon button for text to audio -->
-            <button type="button" id="burialMethodHelper" class="videoHelperBtn" onclick="burialMethod()">
-                PLAY AUDIO
-            </button>
-            <!-- select bar for burial method options -->
-            Burial Method:
+    </div>
 
-            <div>
-                <input type="radio" name="burialMethods" value="Shrouds" id="shrouds">
-                <label for="shrouds">Shrouds</label>
-            </div>
-            <div>
-                <input type="radio" name="burialMethods" value="WovenCaskets" id="woven Caskets">
-                <label for="wovenCs">Woven Caskets</label>
-            </div>
-            <div>
-                <input type="radio" name="burialMethods" value="CardboardContainers" id="cardboard Container">
-                <label for="cardboardCn">Cardboard Containers</label>
-            </div>
-            <div>
-                <input type="radio" name="burialMethods" value="TreePod" id="treePod">
-                <label for="treePod">Tree Pod</label>
-            </div><br>
-        </div>
-
-        <div>
-            <div>
-                <!--Icon button for text to audio-->
-                <button type="button" class="videoHelperBtn" onclick="markerOptions()">
-                    PLAY AUDIO
-                </button>
-                <!-- select bar for marker option -->
-                Please select Marker options:
-
-                <input type="radio" name="marker" value="markerGPS" id="gps Location">
-                <label for="gps">GPS Location</label><br>
-
-                <input type="radio" name="marker" value="markerWoodenPlank" id="wooden Plank">
-                <label for="wooden">Wooden Plank</label><br>
-
-                <input type="radio" name="marker" value="markerEngravedStone" id="engraved Stones">
-                <label for="stone">Engraved stones or rocks</label><br>
-
-                <input type="radio" name="marker" value="biodegeradableMaterial" id="biodigeradable Material">
-                <label for="bio">Biodegradable Material</label><br>
-                <br>
-            </div>
-            <div>
-                <!--Icon button for text to audio-->
-                <button type="button" id="personalMsgHelper" class="videoHelperBtn" onclick="personalMessage()">
-                    PLAY AUDIO
-                </button>
-                <!-- input field for personal msg -->
-                Personalized Preference/Message:
-                <input type="text" class="inputField" id="message" name="message">
-            </div><br>
-            <div>
-                <!-- Icon button for text to audio -->
-                <button type="button" id="initialHelper" class="videoHelperBtn" onclick="initial()">
-                    PLAY AUDIO
-                </button>
-                <!-- input field for initials -->
-                Initials:
-                <input type="text" class="inputField" id="initials" name="initials"> <br>
-            </div><br>
-            <div>
-                <!-- submit button -->
-                <button type="button" class="submitBtn" onclick="submit()">
-                    Submit
-                </button>
-            </div><br>
-    </form>
 </body>
 
 </html>
