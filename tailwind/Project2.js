@@ -7,8 +7,6 @@ Author(Group):
         Preksha Joon-(A00469476)
         Ziyang Xia-(A00475502)
 */
-
-
 // Function to get user input data
 function getInfo() {
 
@@ -68,6 +66,8 @@ setInterval(autoSave, 6000); // autoSave every 1 minutes
 
 // Function to retrieve user data from local browser storage and populate the webpage
 function populateFormFields() {
+    switchDark();
+    switchDark();
     // Retrieve JSON object from local storage
     let storedFormData;
     if (typeof Storage !== "undefined") {
