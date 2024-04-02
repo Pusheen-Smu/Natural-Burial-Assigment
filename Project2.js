@@ -7,8 +7,6 @@ Author(Group):
         Preksha Joon-(A00469476)
         Ziyang Xia-(A00475502)
 */
-
-
 // Function to get user input data
 function getInfo() {
 
@@ -68,6 +66,8 @@ setInterval(autoSave, 6000); // autoSave every 1 minutes
 
 // Function to retrieve user data from local browser storage and populate the webpage
 function populateFormFields() {
+    switchDark();
+    switchDark();
     // Retrieve JSON object from local storage
     let storedFormData;
     if (typeof Storage !== "undefined") {
@@ -105,7 +105,7 @@ function populateFormFields() {
         if(!(storedFormData. burialMarker=="None")){
             document.getElementById(storedFormData. burialMarker).checked=true;
         }
-      
+        
     }
 }
 
@@ -117,9 +117,10 @@ function submit() {
         // Final Store JSON object in local browser storage
         if (typeof Storage !== "undefined") {
             window.localStorage.setItem('submitmitData', JSON.stringify(finalData));
-            console.log(JSON.parse(window.localStorage.getItem("submitData")));
+           
         } else {
             console.log("Local storage is not available.");
         }
+        document.getElementById("submitResponse").innerHTML= "YOUR RESPONSE HAS BEEN SUBMITTED";
    
 }
