@@ -1,4 +1,5 @@
-<!-- 
+
+   <!-- 
     The purpose of this file is to make a natural burial webpage
     for our client MaryAnne. It includes personal information to enter and 
     realted to burial site, marker option etc.
@@ -37,10 +38,10 @@
 <body  onload="populateFormFields()">
 
     <div class=" break-normal border-4 border-gray-300 bg-[url('combined1.png')]  bg-cover  font-sans text-6xl text-purple-900
-                dark:bg-[url('comb1.png')]  dark:text-amber-200 dark:text-6xl dark:font-sans">
-        <div class="m-4">
+                dark:bg-[url('comb1.png')]  dark:text-amber-200 dark:text-6xl   dark:font-sans">
+        <div class="col-span-2 m-4">
             <!--Heading of the webpage-->
-            <h2 class="text-cyan-500 text-6xl md:text-center font-semibold capatalize bg-blend-difference bg-gray-200 
+            <h2 class="text-cyan-500 text-7xl md:text-center font-semibold capatalize bg-blend-difference bg-gray-200 
              dark:text-teal-300 dark:bg-gray-700">Natural Burial</h2>
 
             <!-- Theme Bar.with toggle switch dark and light mode-->
@@ -94,7 +95,7 @@
                     </button>
                     <!-- input field for contact-address -->
                     Address:
-                    <input type="text" class="inputField" id="contactAddress" name="contactAddress" required>
+                    <input type="text" class="inputField" id="contactAddress" name="contactAddress" onkeypress="inputBox()" required>
                 </div><br>
             
             
@@ -223,7 +224,7 @@
                 <div >
                     <!-- submit button -->
                     <button type="button"  id="submitBn" class="font-mono bg-rose-500 p-2 border-4 border-gray-900 rounded-full 
-                    dark:text-gray-50 dark:border-gray-100 dark:bg-rose-900 onclick:bg-lime-400 dark:onclick:bg-lime-400" onclick="submit()">
+                    dark:text-gray-50 dark:border-gray-100 dark:bg-rose-900 " onclick="submit()">
                         SUBMIT
                     </button>
                 </div>
@@ -236,9 +237,7 @@
 
 </body>
 
-</html>
-                
-                   
+</html>      
                         
                        
                    
