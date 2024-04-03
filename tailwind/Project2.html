@@ -29,7 +29,7 @@
     <script src="Project2.js"></script>
     <!-- Jquery/Tailwind-->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="tailwind.config.js"></script>
+    <script src="Project2Tailwind.js"></script>
     <script src="Project2 tailwind function.js"></script>
     
     <script src=""></script>
@@ -37,20 +37,20 @@
 
 <body  onload="populateFormFields()">
 
-    <div class=" break-normal border-4 border-gray-300 bg-[url('combined1.png')]  bg-cover  font-sans text-6xl text-purple-900
-                dark:bg-[url('comb1.png')]  dark:text-amber-200 dark:text-6xl   dark:font-sans">
+    <div class=" break-normal border-4 border-gray-300 bg-[url('combined1.png')]  bg-cover  font-sans text-6xl text-black-900
+                dark:bg-[url('comb1.png')]  dark:text-black-500 dark:text-6xl   dark:font-sans">
         <div class="col-span-2 m-4">
             <!--Heading of the webpage-->
-            <h2 class="text-cyan-500 text-7xl md:text-center font-semibold capatalize bg-blend-difference bg-gray-200 
+            <h2 class="text-black-300 text-7xl mb-4  md:text-center font-semibold capatalize bg-blend-difference bg-gray-200 
              dark:text-teal-300 dark:bg-gray-700">Natural Burial</h2>
 
             <!-- Theme Bar.with toggle switch dark and light mode-->
-            <button onclick="switchDark()" class=" border-gray-500 text-2xl text-white border-8">
-                DARK SWITCH (TEST)
+            <button onclick="switchDark()" class=" border-gray-500 text-5xl text-black-300 border-8 bg-gray-100">
+                DARK SWITCH
             </button>
         </div>
 
-        <div class=" self-center  opacity-95 bg-purple-200 border-8 border-violet-400 rounded-md m-32 p-4 dark:bg-purple-950 
+        <div class=" self-center opacity-95 bg-gray-100 border-8 border-violet-400 rounded-md m-32 p-4 dark:bg-white-950 
         overflow-auto">
            
                 <div>
@@ -95,7 +95,7 @@
                     </button>
                     <!-- input field for contact-address -->
                     Address:
-                    <input type="text" class="inputField" id="contactAddress" name="contactAddress" onkeypress="inputBox()" required>
+                    <input type="text" class="inputField" id="contactAddress" name="contactAddress" onkeypress= "this.style.width = ((this.value.length + 1) * 20) + 'px';" required>
                 </div><br>
             
             
@@ -106,7 +106,7 @@
                     </button>
                     <!-- input field for burial-address -->
                     Burial Location:
-                    <input type="text" class="inputField" id="burialAddress" name="burialAddress" required><br><br>
+                    <input type="text" class="inputField" id="burialAddress" name="burialAddress" onkeypress= "this.style.width = ((this.value.length + 1) * 20) + 'px';" required><br><br>
                 </div>
                 <div>
                     <!-- Icon button for text to audio -->
@@ -208,13 +208,13 @@
                     </button>
                     <!-- input field for personal msg -->
                      Personalized Preference/ Message:<br>
-                    <input type="text" class="inputField" id="message" name="message">
+                    <input type="text" class="inputField" id="message" name="message" onkeypress= "this.style.width = ((this.value.length + 1) * 20) + 'px';">
                 </div><br>
             
            
                 <div>
                     <!-- Icon button for text to audio -->
-                    <button id="initialHelper" class="videoHelperBtn" onclick="initial()">
+                    <button id="initialHelper" class="videoHelperBtn" onclick="initials()">
                         AUDIO
                     </button>
                     <!-- input field for initials -->
@@ -223,7 +223,7 @@
                 </div><br>
                 <div >
                     <!-- submit button -->
-                    <button type="button"  id="submitBn" class="font-mono bg-rose-500 p-2 border-4 border-gray-900 rounded-full 
+                    <button type="button"  id="submitBn" class="font-mono bg-rose-400 p-2 border-4 border-gray-900 rounded-full 
                     dark:text-gray-50 dark:border-gray-100 dark:bg-rose-900 " onclick="submit()">
                         SUBMIT
                     </button>
@@ -241,5 +241,3 @@
                         
                        
                    
-
-
