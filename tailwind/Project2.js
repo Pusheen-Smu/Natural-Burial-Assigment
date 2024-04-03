@@ -122,5 +122,12 @@ function submit() {
             console.log("Local storage is not available.");
         }
         document.getElementById("submitResponse").innerHTML= "YOUR RESPONSE HAS BEEN SUBMITTED";
+        document.getElementById("submitBn").classList.add('bg-green-400', 'text-black');
+        setTimeout(submitResponse,20000)
    
+}
+//function to help confirm submission
+function submitResponse() {
+    document.getElementById("submitResponse").innerHTML="";
+    document.getElementById("submitBn").classList.add('bg-rose-500', 'text-black');
 }
