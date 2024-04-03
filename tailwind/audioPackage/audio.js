@@ -1,3 +1,14 @@
+/* The file load and play audios when needed.
+Author(Group): 
+        Abhishek Abhishek-(A00480219) (Group Leader)
+        Madhur Sharma-(A00477319)
+        Mariam Nasir-(A00460192)
+        Preksha Joon-(A00469476)
+        Ziyang Xia-(A00475502)
+*/
+
+// Initialize Audio files
+
 let addressAudio = new Audio('audioPackage/address.mp3');
 let burialLocationAudio = new Audio('audioPackage/burial location.mp3');
 let burialMethodAudio = new Audio('audioPackage/burial method.mp3');
@@ -10,6 +21,8 @@ let naturalBurialCemeterieAudio = new Audio('audioPackage/natural burial cemeter
 let personalMessageAudio = new Audio('audioPackage/personal message.mp3');
 let phoneNumberAudio = new Audio('audioPackage/phone number.mp3');
 let relationWithDeceasedAudio = new Audio('audioPackage/relation with deceased.mp3');
+
+//play audios
 
 function address() {
     addressAudio.play();
