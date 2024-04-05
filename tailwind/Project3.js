@@ -1,3 +1,5 @@
+//Abhi Please change server url to yours server.
+
 function submitToServer() {
         serverUrl = 'http://mapp79@ugdev.cs.smu.ca:1488';
         const finalData = getInfo();
