@@ -1,0 +1,257 @@
+<!-- 
+    The purpose of this file is to make a natural burial webpage
+    for our client MaryAnne. It includes personal information to enter and 
+    realted to burial site, marker option etc.
+    Author(Group): 
+        Abhishek Abhishek-(A00480219) (Group Leader)
+        Madhur Sharma-(A00477319)
+        Mariam Nasir-(A00460192)
+        Preksha Joon-(A00469476)
+        Ziyang Xia-(A00475502)
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Title-->
+    <title>Natural Burial Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Made Project2.css accessible to this file -->
+    <link rel="stylesheet" href="Project2.css">
+     <!-- Make this jQuery code available to this file -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <!-- Your form and other elements here -->
+    <script src="client.js"></script>
+    <!-- Link for audio package and javascript function fil for audio-->
+ <script src="audioPackage/audio.js"></script>
+ <!-- Link for javascript file-->
+ <script src="Project2.js"></script>
+ <!-- Link for cdn play Tailwind file-->
+ <script src="https://cdn.tailwindcss.com"></script>
+ <!--Link for Project2Tailwind config javascript file -->
+ <script src="Project2Tailwind.js"></script>
+ <!--Link for Project2Tailwind function javascript file for 
+     darkmode functions-->
+ <script src="Project2 tailwind function.js"></script>
+
+</head>
+
+<body onload="populateFormFields()">
+    
+    <!--Used tailwind for styles-->
+    <div class=" break-normal border-4 border-gray-300 bg-[url('combined1.png')]  bg-cover  font-sans text-6xl text-black-900
+                dark:bg-[url('comb1.png')]  dark:text-black-500 dark:text-6xl   dark:font-sans">
+        <div class="col-span-2 m-4">
+            <!--Heading of the webpage-->
+            <h2 class="text-black-300 text-7xl mb-4  md:text-center font-semibold capatalize bg-blend-difference bg-gray-200 
+             dark:text-teal-300 dark:bg-gray-700">Natural Burial</h2>
+
+            <!-- Theme Bar.with toggle switch dark and light mode-->
+            <button onclick="switchDark()" class=" border-gray-500 text-5xl text-black-300 border-8 bg-gray-100">
+                DARK SWITCH
+            </button>
+        </div>
+        <!--This div is for information container on webpage-->
+        <div class=" self-center opacity-95 bg-gray-100 border-8 border-violet-400 rounded-md m-32 p-4 dark:bg-white-950 
+        overflow-auto">
+            <div>
+                <!--  for text to audio-->
+                <button class="videoHelperBtn" onclick="fullname()">
+
+                </button>
+                <!-- input field for name -->
+                Full Name:
+                <input type="text" class="inputField" id="fullName" name="fullName" required>
+            </div><br>
+            <div>
+                <!--  button for text to audio-->
+                <button id="dateBirthHelper" class="videoHelperBtn" onclick="dateBirth()">
+
+                </button>
+                <!-- input field for date of birth and use placeholder for format-->
+                Date Of Birth:
+                <input type="text" class="inputField" id="birthDate" name="birthDate" required>
+            </div><br>
+            <div>
+                <!-- button for text to audio-->
+                <button id="phoneHelper" class="videoHelperBtn" onclick="phoneNumber()">
+                </button>
+                <!-- input field for Phone -->
+                Phone:
+                <input type="text" class="inputField" id="contactPhone" name="contactPhone" required>
+            </div> <br>
+            <div>
+                <!--  button for text to audio -->
+                <button id="emailAddressHelper" class="videoHelperBtn" onclick="email()">
+
+                </button>
+                <!-- input field for contact-address -->
+                Email:
+                <input type="text" class="inputField" id="emailAddress" name="emailAddress" required>
+            </div><br>
+            <div>
+                <!--  button for text to audio -->
+                <button id="addressHelper" class="videoHelperBtn" onclick="address()">
+
+                </button>
+                <!-- input field for contact-address
+                    this input field grows with the user input -->
+                Address:
+                <input type="text" class="inputField" id="contactAddress" name="contactAddress"
+                    onkeypress="this.style.width = ((this.value.length + 1) * 20) + 'px';" required>
+            </div><br>
+
+            <div>
+                <!--  button for text to audio -->
+                <button id="burialAddressHelper" class="videoHelperBtn" onclick="burialLocation()">
+
+                </button>
+                <!-- input field for burial-address 
+                    this input field grows with the user input-->
+                Burial Location:
+                <input type="text" class="inputField" id="burialAddress" name="burialAddress"
+                    onkeypress="this.style.width = ((this.value.length + 1) * 20) + 'px';" required><br><br>
+            </div>
+            <div>
+                <!--  button for text to audio -->
+                <button id="realtionHelper" class="videoHelperBtn" onclick="relationWithDeceased()">
+
+                </button>
+                <!-- select bar for realtion and used radio button -->
+                Relation with deceased:
+                <div>
+                    <input type="radio" name="relationDeceased" value="family" id="family">
+                    <label for="relationFamily">Family</label><br>
+                </div>
+                <div>
+                    <input type="radio" name="relationDeceased" value="friends" id="friends">
+                    <label for="relationFamily">Friends</label><br>
+                </div>
+                <div>
+                    <input type="radio" name="relationDeceased" value="other" id="others">
+                    <label for="relationOthers">Others</label><br><br>
+                </div>
+            </div>
+            <div>
+                <!--  button for text to audio-->
+                <button id="burialTypeHelper" class="videoHelperBtn" onclick="naturalBurialCemeterie()">
+
+                </button>
+                <!-- select bar for cemeterie type options -->
+                Type of natural burial cemeterie:
+
+                <div>
+                    <input type="radio" name="burialCemeterie" value="Hybrid grounds" id="hybrid_grounds">
+                    <label for="hybrid">Hybrid burial grounds</label>
+                </div>
+                <div>
+                    <input type="radio" name="burialCemeterie" value="Natural grounds" id="natural_grounds">
+                    <label for="natural">Natural burial grounds</label>
+                </div>
+                <div>
+                    <input type="radio" name="burialCemeterie" value="Conservation grounds" id="conservative_grounds">
+                    <label for="conservative">Conservation burial grounds</label><br><br>
+                </div>
+            </div>
+            <div>
+                <!--  button for text to audio -->
+                <button id="burialMethodHelper" class="videoHelperBtn" onclick="burialMethod()">
+
+                </button>
+                <!-- select bar for burial method options -->
+                Burial Method:
+
+                <div>
+                    <input type="radio" class="h-4 w-4 " name="burialMethod" value="Shrouds" id="shrouds">
+                    <label for="shrouds">Shrouds</label>
+                </div>
+                <div>
+                    <input type="radio" name="burialMethod" value="WovenCaskets" id="woven Caskets">
+                    <label for="wovenCs">Woven Caskets</label>
+                </div>
+                <div>
+                    <input type="radio" name="burialMethod" value="CardboardContainers" id="cardboard Container">
+                    <label for="cardboardCn">Cardboard Containers</label>
+                </div>
+                <div>
+                    <input type="radio" name="burialMethod" value="TreePod" id="treePod">
+                    <label for="treePod">Tree Pod</label>
+                </div>
+            </div><br>
+
+            <div>
+
+                <!-- button for text to audio-->
+                <button class="videoHelperBtn" onclick="markerOptions()">
+
+                </button>
+                <!-- select bar for marker option -->
+                Marker options:
+                <div>
+                    <input type="radio" name="marker" value="markerGPS" id="gps Location">
+                    <label for="gps">GPS Location</label><br>
+                </div>
+                <div>
+                    <input type="radio" name="marker" value="markerWoodenPlank" id="wooden Plank">
+                    <label for="wooden">Wooden Plank</label><br>
+                </div>
+                <div>
+                    <input type="radio" name="marker" value="markerEngravedStone" id="engraved Stones">
+                    <label for="stone">Engraved stones or rocks</label><br>
+                </div>
+                <div>
+                    <input type="radio" name="marker" value="biodegeradableMaterial" id="biodigeradable Material">
+                    <label for="bio">Biodegradable Material</label><br><br>
+                </div>
+            </div>
+            <div>
+                <!-- button for text to audio-->
+                <button id="personalMsgHelper" class="videoHelperBtn" onclick="personalMessage()">
+
+                </button>
+                <!-- input field for personal msg 
+                    this input field grows with the user input-->
+                Personalized Preference/ Message:<br>
+                <input type="text" class="inputField" id="message" name="message"
+                    onkeypress="this.style.width = ((this.value.length + 1) * 20) + 'px';">
+            </div><br>
+
+            <div>
+                <!--  button for text to audio -->
+                <button id="initialHelper" class="videoHelperBtn" onclick="initials()">
+
+                </button>
+                <!-- input field for initials -->
+                Initials:
+                <input type="text" class="inputField" id="initials" name="initials" required> <br>
+            </div><br>
+            <div>
+                <!-- submit button -->
+                <button type="button" id="submitBn" class="font-mono bg-rose-400 p-2 border-4 border-gray-900 rounded-full 
+                    dark:text-gray-50 dark:border-gray-100 dark:bg-rose-900 " onclick="submit()">
+                    SUBMIT
+                </button>
+            </div>
+            <div id="submitResponse" class="font-semibold text-green-400"> </div>
+
+        </div>
+        <div>
+            <!-- POST request -->
+            <button type="button" class="btn btn-danger" onclick="post()">
+                POST
+            </button>
+        </div>
+        <div>
+            <!-- GET request -->
+            <button type="button" class="btn btn-warning" onclick="get()">
+                GET
+            </button>
+        </div>
+
+    </div>
+ 
+</body>
+
+</html>
