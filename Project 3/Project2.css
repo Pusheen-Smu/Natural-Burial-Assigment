@@ -1,0 +1,52 @@
+/* The purpose of this file is to provide styles includes font, buttons
+to  webpage 
+Autho(Group): 
+        Abhishek-(A00480219) (Group Leader)
+        Madhur-(A00477319)
+        Mariam-(A00460192)
+        Prekha-(A00469476)
+        Ziyang-(A00475502)
+        */
+
+/* body font size */
+body {
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* For audio button style*/
+.videoHelperBtn {
+    
+}
+
+/*for submit button style*/
+.submitBtn {
+    font-size: 1.5rem;
+}
+
+/*styles for input field*/
+.inputField {
+    font-size: 1.8rem;
+    
+    min-width: 24rem;
+    height: 2rem;
+    padding: 0%;
+}
+
+#message{
+    width:60rem;
+}
+input[type="text"] {
+    border: 2px solid #603441; 
+    color: black;
+    dark: color: red;
+    min-width: 32rem;
+    height: 3.75rem;
+    font-size: 2.75rem;
+
+}
+input[type="radio"] {
+    border: 2px solid #603441; 
+    width: 30px;
+    height: 30px;
+}
