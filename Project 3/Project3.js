@@ -46,10 +46,13 @@ function downloadFromServer() {
     .then(data => {
         // Store the fetched data in localStorage
         window.localStorage.setItem('downloadedData', JSON.stringify(data));
+        window.localStorage.setItem('formmData', JSON.stringify(data));
+        window.localStorage.setItem('submitmitData', JSON.stringify(data));
         console.log(data); // Log the downloaded data
-        populateFormFields(data); // Assuming populateFormFields() will use the fetched data
+         // Assuming populateFormFields() will use the fetched data
     })
     .catch(error => {
         console.error('There has been a problem with your fetch operation:', error);
     });
+    populateFormFields();
 }
