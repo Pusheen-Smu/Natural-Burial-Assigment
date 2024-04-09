@@ -27,6 +27,10 @@ function submitToServer() {
     })
     .catch(error => console.error('Error:', error));
 
+
+    window.localStorage.setItem('downloadedData', JSON.stringify(finalData));
+    window.localStorage.setItem("formmData", JSON.stringify(finalData));
+    window.localStorage.setItem('submitmitData', JSON.stringify(finalData));
     // Assuming submitResponse is a function you have defined for handling something after submission
     // The timing might need adjustment based on your needs
     setTimeout(submitResponse, 20000);
