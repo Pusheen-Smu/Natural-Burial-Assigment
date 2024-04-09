@@ -12,34 +12,35 @@
 
 <!DOCTYPE html>
 <html>
-
 <head>
     <!--Title-->
     <title>Natural Burial Form</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Made Project2.css accessible to this file -->
-    <link rel="stylesheet" href="Project2.css">
-     <!-- Make this jQuery code available to this file -->
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <!-- Your form and other elements here -->
-    <script src="Project3client.js"></script>
+    <link rel="stylesheet" href="Project3.css">
+    <!-- Make this jQuery code available to this file -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Link for audio package and javascript function fil for audio-->
- <script src="audioPackage/audio.js"></script>
- <!-- Link for javascript file-->
- <script src="Project2.js"></script>
- <!-- Link for cdn play Tailwind file-->
- <script src="https://cdn.tailwindcss.com"></script>
- <!--Link for Project2Tailwind config javascript file -->
- <script src="Project2Tailwind.js"></script>
- <!--Link for Project2Tailwind function javascript file for 
+    <script src="audioPackage/audio.js"></script>
+    <!-- Link for javascript file-->
+    <script src="Project3.js"></script>
+    <!-- Link for cdn play Tailwind file-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!--Link for Project2Tailwind config javascript file -->
+    <script src="Project3Tailwind.js"></script>
+    <!--Link for Project2Tailwind function javascript file for 
      darkmode functions-->
- <script src="Project2 tailwind function.js"></script>
-
+    <script src="Project3Togglefunction.js"></script>
+    <!--My ugdev.cs.smu.ca account username and  password
+mapp79@ugdev.cs.smu.ca and password is huntingQUESTION99
+-->
+    <!--location of the main HTML file on ugdev.cs.smu.ca
+    public_html/Project3
+-->
 </head>
 
 <body onload="populateFormFields()">
-    
     <!--Used tailwind for styles-->
     <div class=" break-normal border-4 border-gray-300 bg-[url('combined1.png')]  bg-cover  font-sans text-6xl text-black-900
                 dark:bg-[url('comb1.png')]  dark:text-black-500 dark:text-6xl   dark:font-sans">
@@ -230,28 +231,19 @@
             <div>
                 <!-- submit button -->
                 <button type="button" id="submitBn" class="font-mono bg-rose-400 p-2 border-4 border-gray-900 rounded-full 
-                    dark:text-gray-50 dark:border-gray-100 dark:bg-rose-900 " onclick="submit()">
-                    SUBMIT
+                dark:text-gray-50 dark:border-gray-100 dark:bg-rose-900 " onclick="submitToServer()">
+                    SUBMIT/UPLOAD
+                </button>
+
+                </button>
+                <button type="button" id="submitBn" class="font-mono bg-rose-400 p-2 border-4 border-gray-900 rounded-full 
+                dark:text-gray-50 dark:border-gray-100 dark:bg-rose-900 " onclick="downloadFromServer()">
+                    DOWNLOAD
                 </button>
             </div>
             <div id="submitResponse" class="font-semibold text-green-400"> </div>
 
         </div>
-        <div>
-            <!-- POST request -->
-            <button type="button" class="btn btn-danger" onclick="post()">
-                POST
-            </button>
-        </div>
-        <div>
-            <!-- GET request -->
-            <button type="button" class="btn btn-warning" onclick="get()">
-                GET
-            </button>
-        </div>
-
     </div>
- 
 </body>
-
 </html>
