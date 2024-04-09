@@ -8,43 +8,52 @@ Author(Group):
     Ziyang Xia-(A00475502)
 */
 // Object to store JSON data
-let storageJSON = {};
-// Importing express module
-let express = require('express');
-let app = express();
-// Port number
-let port = 1488;
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors'); // Import CORS package
+const app = express();
+const port = 1488;
 
-// Use express.json() to automatically parse JSON bodies
-app.use(express.json());
+// Use CORS middleware to enable CORS
+app.use(cors());
 
-// This object will store the last saved JSON
-let savedJson = { fullName: "John Doe",
-birthDate: "",
-contactPhone: "",
-contactEmail: "",
-contactAddress: "",
-burialAddress: "",
-relationDeceased: "family", // Defaulting to the first option
-burialCemeterie: "Hybrid grounds", // Defaulting to the first option
-burialMethod: "Shrouds", // Defaulting to the first option
-burialMarker: "", // set a default value here if needed
-message: "",
-initials: ""};
+// Middleware to parse JSON bodies
+app.use(bodyParser.json());
 
-app.post('/save', (req, res) => {
-  // Save the JSON from the request body
-  savedJson = req.body;
-  res.send('JSON saved');
+// default value
+let storedData = {
+    fullName: 'John Doe',
+    birthDate: '',
+    contactPhone: '',
+    contactEmail: '',
+    contactAddress: '',
+    burialAddress: '',
+    relationDeceased: 'family',
+    burialCemeterie: 'hybrid_grounds',
+    burialMethod: 'shrouds',
+    burialMarker: 'gps Location',
+    message: '',
+    initials: ''
+  };
+
+app.post('/submit', (req, res) => {
+    // Store the incoming JSON in memory
+    storedData = req.body;
+    console.log('Data received:', storedData);
+    // Respond to the client to acknowledge receipt
+    res.send('Data has been received and stored.');
 });
 
 app.get('/download', (req, res) => {
-  // Send the saved JSON back to the client
-  res.json(savedJson);
-  // Optionally clear savedJson if you need to free it after sending
-  savedJson = {};
+    // Send the stored JSON back to the client
+    if (Object.keys(storedData).length) {
+        res.json(storedData);
+    } else {
+        res.status(404).send('No data found');
+    }
+    console.log('Data sent:', storedData);
 });
-// Server listening on the specified port
+
 app.listen(port, () => {
-  console.log(`Server listening at http://localhost:${port}`);
+    console.log(`Server listening at http://localhost:${port}`);
 });
